@@ -1,1 +1,0 @@
-esta es la privera version 1.0.uf
