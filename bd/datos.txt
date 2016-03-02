@@ -1,0 +1,15 @@
+﻿Identificación CPU
+Modelo del Procesador 
+Modelo de tarjeta madre
+Modelo memoria Ram
+CASE PC
+Fuente de poder
+CD-ROM
+disco duro
+Sistema operativo
+Modelo del monitor
+Teclado
+Mouse
+Cornetas
+tarjeta adaptador de red 
+tarjeta adaptador Wifi
