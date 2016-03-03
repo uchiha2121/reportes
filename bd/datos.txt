@@ -1,15 +1,26 @@
-﻿Identificación CPU
-Modelo del Procesador 
-Modelo de tarjeta madre
-Modelo memoria Ram
-CASE PC
-Fuente de poder
-CD-ROM
-disco duro
+﻿(Departamento)
+(Personal responsable)
+
+
+(Identificador del Equipo)
 Sistema operativo
+Punto de red
+
+CPU
+Procesador 
+tarjeta madre
+memoria Ram
+tarjeta adaptador de red
+tarjeta adaptador Wifi 
+Fuente de poder
+CD-DVD
+disco duro
+CASE PC
+
 Modelo del monitor
 Teclado
 Mouse
 Cornetas
-tarjeta adaptador de red 
-tarjeta adaptador Wifi
+
+(otros)
+
