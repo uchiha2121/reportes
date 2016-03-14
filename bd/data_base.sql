@@ -4,7 +4,7 @@
 */
 
 
-CREATE DATABASE `inventario_maquinas` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE `inventario_maquinas` DEFAULT CHARSET =utf8 COLLATE=utf8_spanish_ci;
 
 USE inventario_maquinas;
 
@@ -13,27 +13,10 @@ USE inventario_maquinas;
 CREATE TABLE IF NOT EXISTS `departamentos` (
 cod_depto int NOT NULL ,
 nombre_depto varchar (20) NOT NULL,
-PRIMARY KEY (cod_depto) NOT NULL,
-FOREIGN KEY (id_n_proceso) REFERENCES depto_pers (n_proceso) 
+PRIMARY KEY (cod_depto)
 
 
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
-
-
-
-
-CREATE TABLE IF NOT EXISTS `depto_pers` (
-n_proceso int NOT NULL AUTO_INCREMENT UNIQUE,
-fecha_inicio date NOT NULL,
-fecha_entrega date NOT NULL,
-PRIMARY KEY (n_proceso),
-FOREIGN KEY (id_cedula) REFERENCES personal (cedula)
-
-
-
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
-
-
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
@@ -41,61 +24,91 @@ CREATE TABLE IF NOT EXISTS `personal` (
 cedula int(8) NOT NULL UNIQUE,
 nombre varchar(30) NOT NULL,
 apellido varchar(30) NOT NULL,
-PRIMARY KEY (cedula),
-INDEX (cedula)
+PRIMARY KEY (cedula)
 
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
-
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
-CREATE TABLE IF NOT EXISTS `esp_hard` (
- cod_hard int NOT NULL UNIQUE AUTO_INCREMENT,
- serial_ varchar(30) NOT NULL UNIQUE,
- marca_eh varchar(30) NOT NULL,
+CREATE TABLE IF NOT EXISTS `depto_pers` (
+n_proceso int NOT NULL,
+id_cedula int(8) NOT NULL UNIQUE,
+id_depto int NOT NULL ,
+PRIMARY KEY (n_proceso),
+FOREIGN KEY (id_cedula) REFERENCES personal (cedula),
+FOREIGN KEY (id_depto) REFERENCES departamentos (cod_depto)
+
+
+
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `hardware` (
+ cod_har int NOT NULL,
+ serial_h varchar(30) NOT NULL UNIQUE,
+ marca varchar(30) NOT NULL,
  estado varchar(30) NOT NULL,
  f_ingreso date NOT NULL,
  f_retiro date,
-PRIMARY KEY (cod_hard),
-FOREIGN KEY (id_tp_hwr_) REFERENCES tipo_hardw (cod_hwr),
-FOREIGN KEY (id_esp_cpu) REFERENCES esp_cpu (cod_esp_cpu)
+PRIMARY KEY (cod_har)
 
 
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
 
-CREATE TABLE IF NOT EXISTS `tipo_hardw` (
+CREATE TABLE IF NOT EXISTS `tipo_h` (
  
-cod_tp_hwr int NOT NULL,
+cod_tp_h int NOT NULL,
 tipo_h_nombre varchar(30) NOT NULL,
+PRIMARY KEY (cod_tp_h)
 
-PRIMARY KEY (cod_cpu),
-
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
-
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
 
-CREATE TABLE IF NOT EXISTS `esp_cpu` (
 
- cod_esp_cpu int NOT NULL,
+CREATE TABLE IF NOT EXISTS `cpu` (
+
+ cod_cpu int NOT NULL,
  especificacion varchar(30) NOT NULL,
- marca_ec varchar(30) NOT NULL,
-PRIMARY KEY (cod_cpu),
-FOREIGN KEY (id_h_cpu) REFERENCES tipo_hardw_cpu (cod_h_cpu)
+ marca varchar(30) NOT NULL,
+ f_ingreso date NOT NULL,
+ f_retiro date,
+ PRIMARY KEY (cod_cpu)
 
 
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
-CREATE TABLE IF NOT EXISTS `tipo_hardw_cpu` (
- cod_h_cpu int NOT NULL,
- tipo_hdc_nombre varchar(30) NOT NULL,
-PRIMARY KEY(cod_h_cpu),
+CREATE TABLE IF NOT EXISTS `tipo_c` (
+ cod_tp_c int NOT NULL,
+ tipo_c_nombre varchar(30) NOT NULL,
+PRIMARY KEY(cod_tp_c)
 
-)ENGINE=MyISAM DEFAULT CHARACTER utf8_unicode_ci;
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+
+CREATE TABLE IF NOT EXISTS `reporte` (
+ cod_reporte int NOT NULL AUTO_INCREMENT,
+ fecha_inicio date NOT NULL,
+fecha_entrega date,
+id_harware int NOT NULL,
+id_tp_h int NOT NULL,
+id_cpu int NOT NULL,
+id_tp_c int NOT NULL,
+id_n_proceso int NOT NULL,
+PRIMARY KEY(cod_reporte),
+FOREIGN KEY (id_n_proceso) REFERENCES depto_pers (n_proceso),
+FOREIGN KEY (id_harware) REFERENCES hardware (cod_har),
+FOREIGN KEY (id_tp_h) REFERENCES tipo_h (cod_tp_h),
+FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu),
+FOREIGN KEY (id_tp_c) REFERENCES tipo_c (cod_tp_c)
+
+)ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
