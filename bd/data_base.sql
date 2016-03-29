@@ -12,7 +12,7 @@ CREATE DATABASE `inventario_maquinas` DEFAULT CHARSET =utf8 COLLATE=utf8_spanish
 
 CREATE TABLE IF NOT EXISTS `departamentos` (
 
-		cod_depto int NOT NULL ,
+		cod_depto int UNSIGNED NOT NULL ,
 		nombre_depto varchar (20) NOT NULL,
 		PRIMARY KEY (cod_depto)
 
@@ -23,9 +23,10 @@ CREATE TABLE IF NOT EXISTS `departamentos` (
 
 CREATE TABLE IF NOT EXISTS `personal` (
 
-		cedula int(8) NOT NULL UNIQUE,
+		cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		nombre varchar(30) NOT NULL,
 		apellido varchar(30) NOT NULL,
+		telefono int(11) NOT NULL,
 		PRIMARY KEY (cedula)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -33,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `personal` (
 
 CREATE TABLE IF NOT EXISTS `depto_pers` (
 
-		n_proceso int NOT NULL,
+		cod_dept_p int UNSIGNED NOT NULL,
 		id_cedula int(8) NOT NULL UNIQUE,
 		id_depto int NOT NULL ,
-		PRIMARY KEY (n_proceso),
+		PRIMARY KEY (cod_dept_p),
 		FOREIGN KEY (id_cedula) REFERENCES personal (cedula),
 		FOREIGN KEY (id_depto) REFERENCES departamentos (cod_depto)
 
@@ -46,79 +47,79 @@ CREATE TABLE IF NOT EXISTS `depto_pers` (
 
 
 
+CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 
-
-CREATE TABLE IF NOT EXISTS `hardware` (
-
-		 cod_har int NOT NULL,
-		 n_prestamo int,
-		 serial_h varchar(30) NOT NULL UNIQUE,
-		 marca varchar(30) NOT NULL,
-		 estado varchar(30) NOT NULL,
-		 f_ingreso date NOT NULL,
-		 f_retiro date,
-		PRIMARY KEY (cod_har)
-
+	 cod_carac varchar(30) UNSIGNED NOT NULL,
+	 c_nombre varchar(30) NOT NULL,
+	 marca varchar(30) NOT NULL,
+	 especificacion varchar(30) NOT NULL,
+	 id_cpu varchar(30) NOT NULL,
+	 PRIMARY KEY (cod_carac),
+     FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
-
-
-CREATE TABLE IF NOT EXISTS `tipo_h` (
- 
-		cod_tp_h int NOT NULL,
-		tipo_h_nombre varchar(30) NOT NULL,
-		PRIMARY KEY (cod_tp_h)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
 
 
 
 CREATE TABLE IF NOT EXISTS `cpu` (
 
-	 cod_cpu int NOT NULL,
-	 n_prestamo int,
-	 serial_cpu varchar(30) NOT NULL,
-	 especificacion varchar(30) NOT NULL,
-	 marca varchar(30) NOT NULL,
-	 f_ingreso date NOT NULL,
-	 f_retiro date,
-	 PRIMARY KEY (cod_cpu)
+		cod_cpu varchar(30) UNSIGNED NOT NULL,
+		id_prestamo varchar(30) NOT NULL,
+		PRIMARY KEY(cod_cpu),
+		FOREIGN KEY (id_prestamo) REFERENCES prestamo_equipo (n_prestamo)
 
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
-CREATE TABLE IF NOT EXISTS `tipo_c` (
+CREATE TABLE IF NOT EXISTS `hardware` (
 
-		cod_tp_c int NOT NULL,
-		tipo_c_nombre varchar(30) NOT NULL,
-		PRIMARY KEY(cod_tp_c)
+		 serial_h varchar(30) UNSIGNED NOT NULL UNIQUE,
+		 h_nombre varchar(30) NOT NULL,
+		 marca varchar(30) NOT NULL,
+		 estado varchar(30) NOT NULL,
+		PRIMARY KEY (serial_h)
+
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
-CREATE TABLE IF NOT EXISTS `reporte` (
+CREATE TABLE IF NOT EXISTS `prestamo_hrw` (
 
-		cod_reporte int NOT NULL AUTO_INCREMENT,
-		n_prestamo int NOT NULL AUTO_INCREMENT,
+	 cod_pres_h int UNSIGNED NOT NULL,
+	 id_prestamo varchar(30) NOT NULL,
+	 id_serial_h varchar(30) NOT NULL,
+	 PRIMARY KEY (cod_pres_h),
+	 FOREIGN KEY (id_serial_h) REFERENCES  hardware (serial_h),
+     FOREIGN KEY (id_prestamo) REFERENCES prestamo_equipo (n_prestamo)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
+CREATE TABLE IF NOT EXISTS `prestamo_equipo` (
+
+		n_prestamo int UNSIGNED NOT NULL AUTO_INCREMENT,
+		cedula int NOT NULL UNIQUE,
 		fecha_inicio date NOT NULL,
-		fecha_entrega date,
-		id_harware int NOT NULL,
-		id_tp_h int NOT NULL,
-		id_cpu int NOT NULL,
-		id_tp_c int NOT NULL,
-		id_n_proceso int NOT NULL,
-		PRIMARY KEY(cod_reporte),
-		FOREIGN KEY (id_n_proceso) REFERENCES depto_pers (n_proceso),
-		FOREIGN KEY (id_harware) REFERENCES hardware (cod_har),
-		FOREIGN KEY (id_tp_h) REFERENCES tipo_h (cod_tp_h),
-		FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu),
-		FOREIGN KEY (id_tp_c) REFERENCES tipo_c (cod_tp_c)
+		PRIMARY KEY(n_prestamo),
+		FOREIGN KEY (cedula) REFERENCES personal (cedula)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
+CREATE TABLE IF NOT EXISTS `alta_prestamo` (
+
+		n_alta int NOT NULL UNSIGNED AUTO_INCREMENT,
+		cedula int NOT NULL UNIQUE,
+		id_n_prestamo varchar(30) NOT NULL,
+		fecha_fin date NOT NULL,
+		PRIMARY KEY(n_alta),
+		FOREIGN KEY (cedula) REFERENCES personal (cedula),
+		FOREIGN KEY (id_n_prestamo) REFERENCES prestamo_equipo (n_prestamo)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
