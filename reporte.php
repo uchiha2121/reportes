@@ -11,11 +11,14 @@ ob_start();
 
 <page>
 
-<page_header>	<h1>REPUBLICA DE BOLIVARIANA DE VENEZUELA</h1>
-</page_header>
+<page_header>	<h1>REPUBLICA DE BOLIVARIANA DE VENEZUELA</h1> </page_header>
 
    
-   <page_footer></page_footer>
+   <page_footer><h3>esto es un footer</h3></page_footer>
+
+<br><br><br><br><p>hola esto es un <strong>texto normalito</strong></p>
+<p><b>hola mundo</b></p>
+
 </page>
 
 <?php
