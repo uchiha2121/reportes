@@ -9,27 +9,27 @@ switch ($op)
 {
 	
 		case "alta":
-			$contenido= 'php/alta-reporte.php';
-			$titulo= 'Alta de reporte';
+			$contenido= 'php/prestamo/alta-prestamo.php';
+			$titulo= 'Alta de prestamo';
 			break;
 
 		case "baja":
-			$contenido= "php/baja-reporte.php";
-			$titulo= "Baja de reporte";
+			$contenido= "php/prestamo/baja-prestamo.php";
+			$titulo= "Baja de prestamo";
 			break;
 
 		case "consultas":
-			$contenido= "php/consulta-reporte.php";
-			$titulo= "consulta de reporte";
+			$contenido= "php/prestamo/consulta-prestamo.php";
+			$titulo= "consulta de prestamo";
 			break;
 
 		case "modificar":
-			$contenido= "php/modificar-reporte.php";
-			$titulo= "modificar reporte";
+			$contenido= "php/prestamo/modificar-prestamo.php";
+			$titulo= "modificar prestamo";
 			break;
 	
 	default:
-		$contenido= "php/home.php";
+		$contenido= "php/prestamo/home.php";
 		$titulo= "inicio";
 		break;
 }
