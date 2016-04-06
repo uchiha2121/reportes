@@ -2,18 +2,19 @@
 
 function conectarse(){
 
-$hostname_mi = "localhost";
-$database_mi = "auditoria";
-$username_mi = "root";
-$password_mi = "";
+$servidor = "localhost";
+$bd = "inventario_maquinas";
+$usuario = "root";
+$password = "";
 
 
-$conectar = new mysqli($hostname_mi, $username_mi, $password_mi) or die trigger_error(mysql_error(),E_USER_ERROR); return $conectar;
+$conectar = new mysqli($servidor,$usuario,$password,$bd) or die ("NO SE PUDO CONECTAR A LA BASE DE DATOS"); 
+return $conectar;
 
 
 
 }
 
-$conexion=conectarse();
+$conexion = conectarse();
  
 ?>
