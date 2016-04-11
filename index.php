@@ -44,6 +44,13 @@ switch ($op)
 
 	<meta charset="UTF-8">
 	
+	<link rel="stylesheet" src="https://code.jquery.com/jquery-2.2.3.min.js">
+	
+	<script>
+		!window.jquery-2.2.3 && document.write("<script src='js/jquery-2.2.3.min.js' ><\/script>");
+
+	</script>
+
 	<title><?php echo "$titulo"; ?></title>
 
 
