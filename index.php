@@ -9,27 +9,27 @@ switch ($op)
 {
 	
 		case "alta":
-			$contenido= 'php/prestamo/alta-prestamo.php';
-			$titulo= 'Alta de prestamo';
+			$contenido= 'php/cpu/alta-cpu.php';
+			$titulo= 'Alta de cpu';
 			break;
 
 		case "baja":
-			$contenido= "php/prestamo/baja-prestamo.php";
-			$titulo= "Baja de prestamo";
+			$contenido= "php/cpu/baja-cpu.php";
+			$titulo= "Baja de cpu";
 			break;
 
 		case "consultas":
-			$contenido= "php/prestamo/consulta-prestamo.php";
-			$titulo= "consulta de prestamo";
+			$contenido= "php/cpu/consulta-cpu.php";
+			$titulo= "consulta de cpu";
 			break;
 
 		case "modificar":
-			$contenido= "php/prestamo/modificar-prestamo.php";
-			$titulo= "modificar prestamo";
+			$contenido= "php/cpu/modificar-cpu.php";
+			$titulo= "modificar cpu";
 			break;
 	
 	default:
-		$contenido= "php/prestamo/home.php";
+		$contenido= "php/cpu/home.php";
 		$titulo= "inicio";
 		break;
 }
@@ -78,7 +78,7 @@ switch ($op)
 	
 <article>
 
-	<?php include $contenido ;  ?>
+	<?php include $contenido;  ?>
 
 </article>
 
