@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 http://www.iguannaweb.com/2013/12/26/validacion-de-formularios-dinamicos-con-jquery.html
 
 
@@ -16,3 +17,6 @@ http://www.masquewordpress.com/anadir-campos-a-un-formulario-dinamicamente-con-j
 
 
 https://jsfiddle.net/vv358bLj/1/
+=======
+https://www.youtube.com/watch?v=3L3abtWXnks&list=PL469D93BF3AE1F84F&index=13
+>>>>>>> origin/master
