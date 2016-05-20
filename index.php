@@ -1,5 +1,6 @@
 
-<?php 
+<?php
+
 //error_reporting(E_ALL ^ E_NOTICE);
 //$op = $_GET=["op"];
 
@@ -8,28 +9,43 @@ $titulo="";
 switch ($op) 
 {
 	
-		case "alta":
-			$contenido= 'php/cpu/alta-cpu.php';
-			$titulo= 'Alta de cpu';
+		case "prestamo":
+			$contenido= 'php/prestamo/home_prestamo.php';
+			$titulo= 'Prestamo De Equipo';
 			break;
 
-		case "baja":
-			$contenido= "php/cpu/baja-cpu.php";
-			$titulo= "Baja de cpu";
+		case "cpu":
+			$contenido= "php/cpu/home_cpu.php";
+			$titulo= "Cargar CPU";
 			break;
 
-		case "consultas":
+						/*case "alta":
+						$contenido2 = 'alta-cpu.php';
+						$titulo = 'Alta de cpu';
+						break;*/
+
+		case "hardware":
 			$contenido= "php/cpu/consulta-cpu.php";
 			$titulo= "consulta de cpu";
 			break;
 
-		case "modificar":
+		case "departamento":
+			$contenido= "php/cpu/modificar-cpu.php";
+			$titulo= "modificar cpu";
+			break;
+
+		case "personal":
+			$contenido= "php/cpu/modificar-cpu.php";
+			$titulo= "modificar cpu";
+			break;
+
+		case "baja":
 			$contenido= "php/cpu/modificar-cpu.php";
 			$titulo= "modificar cpu";
 			break;
 	
 	default:
-		$contenido= "php/cpu/home.php";
+		$contenido= "home.php";
 		$titulo= "inicio";
 		break;
 }
@@ -42,45 +58,44 @@ switch ($op)
 <html lang="es">
 <head>
 
-	<meta charset="UTF-8">
-	
-	<link rel="stylesheet" src="https://code.jquery.com/jquery-2.2.3.min.js">
-	
-	<script>
-		!window.jquery-2.2.3 && document.write("<script src='js/jquery-2.2.3.min.js' ><\/script>");
+		<meta charset="UTF-8">
+			
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
-	</script>
-
-	<title><?php echo "$titulo"; ?></title>
+		<title><?php echo "$titulo"; ?></title>
 
 
 </head>
 <body>
 	
-<main>
-	<header></header>
+<main class="container-fluid">
+		<header></header>
 
-	<nav> 
-			<ul>
-					<li><a  class="cambio" href="index.php">HOME</a></li>
-					<li><a 	class="cambio" href='?op=alta'>ALTA</a></li>
-					<li><a 	class="cambio" href='?op=baja'>BAJA</a></li>
-					<li><a  class="cambio" href="?op=consultas">CONSULTA</a></li>
-					<li><a  class="cambio" href="?op=modificar">MODIFICAR</a></li>
-			</ul>
-			 
-	</nav>
+			<nav> 
+					<ul class="nav nav-pills nav-justified">
+							<li><a  class="cambio" href="index.php">HOME</a></li>
+							<li><a  class="cambio" href="?op=prestamo">PRESTAMO EQUIPO</a></li>
+							<li><a 	class="cambio" href="?op=cpu">CPU</a></li>
+							<li><a 	class="cambio" href="?op=hardware">HARDWARE</a></li>
+							<li><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
+							<li><a  class="cambio" href="?op=personal">PERSONAL</a></li>
+							<li><a  class="cambio" href="?op=baja">BAJA PRESTAMO</a></li>
+
+					</ul>
+					 
+			</nav>
 
 
 
 
-<section>
+<section class="row">
 	
-<article>
+			
 
-	<?php include $contenido;  ?>
+				<?php include $contenido;  ?>
 
-</article>
+			
 
 </section>
 
@@ -89,6 +104,9 @@ switch ($op)
 
 </main>
 
-
+		<script src="js/jquery-2.2.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/crear.js"></script>
+		<script src="js/ajax.js"></script>
 </body>
 </html>

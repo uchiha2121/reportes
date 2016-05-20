@@ -67,16 +67,6 @@ CREATE TABLE IF NOT EXISTS `prestamo_equipo` (
 
 
 
-CREATE TABLE IF NOT EXISTS `prestamo_cpu` (
-
-		cod_pres_cpu varchar(30)      NOT NULL,
-		id_prestamo  int(4) UNSIGNED  NOT NULL,
-		id_cpu       varchar(30)      NOT NULL,
-		PRIMARY KEY(cod_pres_cpu),
-		FOREIGN KEY (id_prestamo) REFERENCES prestamo_equipo (n_prestamo),
-		FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
@@ -93,9 +83,8 @@ CREATE TABLE IF NOT EXISTS `cpu` (
 
 CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 
-	 cod_carac varchar(30) NOT NULL,
+	 cod_carac int(5) UNSIGNED NOT NULL AUTO_INCREMENT,
 	 c_nombre varchar(30) NOT NULL,
-	 marca varchar(30) NOT NULL,
 	 especificacion varchar(30) NOT NULL,
 	 id_cpu varchar(30) NOT NULL,
 	 PRIMARY KEY (cod_carac),
@@ -104,6 +93,17 @@ CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+
+CREATE TABLE IF NOT EXISTS `prestamo_cpu` (
+
+		cod_pres_cpu varchar(30)      NOT NULL,
+		id_prestamo  int(4) UNSIGNED  NOT NULL,
+		id_cpu       varchar(30)      NOT NULL,
+		PRIMARY KEY(cod_pres_cpu),
+		FOREIGN KEY (id_prestamo) REFERENCES prestamo_equipo (n_prestamo),
+		FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu)
+
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 
