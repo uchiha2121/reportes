@@ -4,22 +4,22 @@ $opi = isset($_GET['opi']) ? $_GET['opi'] : null;
 switch ($opi) 
 {
 	
-		case "alta":
+		case "alta_cpu":
 			$contenido2 = 'alta-cpu.php';
 			$titulo = 'Alta de cpu';
 			break;
 
-		case "baja":
+		case "baja_cpu":
 			$contenido2 = "baja-cpu.php";
 			$titulo = "Baja de cpu";
 			break;
 
-		case "consultas":
-			$contenido2 = "/consulta-cpu.php";
+		case "consultas_cpu":
+			$contenido2 = "consulta-cpu.php";
 			$titulo = "consulta de cpu";
 			break;
 
-		case "modificar":
+		case "modificar_cpu":
 			$contenido2 = "modificar-cpu.php";
 			$titulo = "modificar cpu";
 			break;
@@ -40,10 +40,10 @@ switch ($opi)
 	<nav class="col-xs- col-sm- col-xs-2 col-lg-2" > 
 			<ul class="nav nav-pills nav-stacked">
 					
-					<li><a 	class="cambio" href="?op=cpu&opi=alta">ALTA</a></li>
-					<li><a  class="cambio" href="?op=cpu&opi=consultas">CONSULTA</a></li>
-					<li><a  class="cambio" href="op=cpu&?opi=modificar">MODIFICAR</a></li>
-					<li><a 	class="cambio" href="?op=cpu&opi=baja">BAJA</a></li>
+					<li><a 	class="cambio" href="?op=cpu&opi=alta_cpu">ALTA</a></li>
+					<li><a  class="cambio" href="?op=cpu&opi=consultas_cpu">CONSULTA</a></li>
+					<li><a  class="cambio" href="op=cpu&?opi=modificar_cpu">MODIFICAR</a></li>
+					<li><a 	class="cambio" href="?op=cpu&opi=baja_cpu">BAJA</a></li>
 			</ul>
 			 
 	</nav>

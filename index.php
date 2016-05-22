@@ -16,32 +16,27 @@ switch ($op)
 
 		case "cpu":
 			$contenido= "php/cpu/home_cpu.php";
-			$titulo= "Cargar CPU";
+			$titulo= "CPU";
 			break;
 
-						/*case "alta":
-						$contenido2 = 'alta-cpu.php';
-						$titulo = 'Alta de cpu';
-						break;*/
-
 		case "hardware":
-			$contenido= "php/cpu/consulta-cpu.php";
-			$titulo= "consulta de cpu";
+			$contenido= "php/hardware/home_hardware.php";
+			$titulo= "Hardware";
 			break;
 
 		case "departamento":
-			$contenido= "php/cpu/modificar-cpu.php";
-			$titulo= "modificar cpu";
+			$contenido= "php//home_departamento.php";
+			$titulo= "Deparamento";
 			break;
 
 		case "personal":
-			$contenido= "php/cpu/modificar-cpu.php";
-			$titulo= "modificar cpu";
+			$contenido= "php//home_personal.php";
+			$titulo= "Personal";
 			break;
 
 		case "baja":
-			$contenido= "php/cpu/modificar-cpu.php";
-			$titulo= "modificar cpu";
+			$contenido= "php//home_baja.php";
+			$titulo= "Baja";
 			break;
 	
 	default:

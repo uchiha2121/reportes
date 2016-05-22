@@ -1,13 +1,13 @@
-<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
+<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" action="php/cpu/agregar-cpu.php" accept-charset="utf-8">
 	
 		<div class="form-group" >
 			
 
 
 
-<!-- 
+
  				<label for="code" class="control-label">Codigo Case: </label>
-  				<input type="text" name="code" class="form-control" placeholder="Codigo Case" id="codPresCpu"> -->
+  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="codPresCpu">
 
 
 
@@ -67,7 +67,7 @@
 
 					</td>
 
-					<td><input type="text" name="Descripcion" class="form-control" placeholder="Descripcion" id="descripcion[]"></td>
+					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion"></td>
 					<td></td>
 
 

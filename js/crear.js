@@ -4,12 +4,13 @@ $(document).on('ready',funcAgregar);
 function funcAgregar(){
 
 
-	$("#btnAgregar").on('click',funcNuevaAgregar);
+	$("#btnAgregar").on('click',funcNuevaAgregarC);
+	$("#btnAgregarH").on('click',funcNuevaAgregarH);
 	$("body").on('click','.btn-danger',funcEliminarFila);
 }
 
 
-function funcNuevaAgregar(){
+function funcNuevaAgregarC(){
 	
 	
 
@@ -94,6 +95,109 @@ function funcNuevaAgregar(){
 
 											   )
 									   )
+
+									   .append(
+
+									   	$('<td>')
+									   		.append(
+
+													$('<botton>').addClass('btn btn-danger').text('Eliminar')
+									   			)
+
+
+									   	      )	
+
+
+			     );
+
+				
+			
+
+
+	}
+
+
+
+	function funcNuevaAgregarH(){
+	
+	
+
+
+	
+	$("#TablaAgregadora2")
+		.append(
+
+
+				$('<tr>')
+					.append(
+
+
+							
+								
+
+											$('<td>')
+												.append(
+													$('<select name="componentes[]" class="form-control">')
+														.append(
+
+
+														 $('<option value="-1">').text('Seleccion')
+ 															   )//select
+														.append(
+         
+             
+             												$('<option value="monitor">').text('Monitor')
+                     											)//option
+
+														.append(
+         
+             
+             												$('<option value="teclado">').text('Teclado')
+                     											)//option
+														.append(
+         
+             
+             												$('<option value="mouse">').text('Mouse')
+                     											)//option
+														.append(
+         
+             
+             												$('<option value="cornetas">').text('Cornetas')
+                     											)//option
+														.append(
+         
+             
+             												$('<option value="audifonos">').text('Audifonos')
+                     											)//option
+														.append(
+         
+             
+             												$('<option value="camara web">').text('Camara Web')
+                     											)//option
+													
+									   					)//td
+																			
+								
+
+					         )
+
+						.append(
+
+									$('<td>')
+										.append(
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text">')
+
+											   )
+									   )
+						.append(
+
+									$('<td>')
+										.append(
+												$('<input id="searchBox" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" type="text">')
+
+											   )
+									   )
+
 
 									   .append(
 

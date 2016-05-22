@@ -113,8 +113,7 @@ CREATE TABLE IF NOT EXISTS `hardware` (
 
 		 serial_h varchar(30) NOT NULL UNIQUE,
 		 h_nombre varchar(30) NOT NULL,
-		 marca varchar(30) NOT NULL,
-		 estado varchar(30) NOT NULL,
+		 especificacion varchar(30) NOT NULL,
 		PRIMARY KEY (serial_h)
 
 
