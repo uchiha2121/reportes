@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `cpu` (
 
 CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 
-	 cod_carac int(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+	 cod_carac int(5) NOT NULL AUTO_INCREMENT,
 	 c_nombre varchar(30) NOT NULL,
 	 especificacion varchar(30) NOT NULL,
 	 id_cpu varchar(30) NOT NULL,

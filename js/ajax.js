@@ -1,31 +1,17 @@
+var mensaje = $("#mensaje");
+//Ocultamos el contenedor
+mensaje.hide();
 $(document).on('ready',funcAjax);
 
 
 
 function funcAjax (){
-var mensaje = $("#mensaje");
-//Ocultamos el contenedor
-mensaje.hide();
-
-$("#BtnHrw").on('click',funcNuevaAjaxCPU);
-//$("#BtnHrw").on('click',funcNuevaAjaxHrw);
-
-
-
-
-}
-
-
-
-function funcNuevaAjaxCPU(){
-
-
-
+//FORMULARIO ALTA HARDWARE
 //Cuando el formulario con ID add se envíe...
-$("#BtnHrw").on("submit", function(e){
+$("#formHrw").on("submit", function(e){
 	//Evitamos que se envíe por defecto
 	e.preventDefault();
-	//Creamos un FormData con los datos del mismo formulario
+	//Creamos un FormData con los datos del mismo 
 	var formData = new FormData(document.getElementById("formHrw"));
 
 	//Llamamos a la función AJAX de jQuery
@@ -50,28 +36,25 @@ $("#BtnHrw").on("submit", function(e){
 		mensaje.slideDown(500); });
 });
 
-}
 
 
 
 
 
 
-function funcNuevaAjaxHrw(){
 
-
-
+// FORMULARIO ALTA CPU
 //Cuando el formulario con ID add se envíe...
-$("#BtnHrw").on("submit", function(e){
+$("#formCpu").on("submit", function(e){
 	//Evitamos que se envíe por defecto
 	e.preventDefault();
 	//Creamos un FormData con los datos del mismo formulario
-	var formData = new FormData(document.getElementById("formHrw"));
+	var formData = new FormData(document.getElementById("formCpu"));
 
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/agregar-hardware.php",
+		url: "php/cpu/agregar-cpu.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -90,4 +73,9 @@ $("#BtnHrw").on("submit", function(e){
 		mensaje.slideDown(500); });
 });
 
+
+
+
 }
+
+

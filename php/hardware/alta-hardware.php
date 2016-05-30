@@ -48,12 +48,8 @@
 				<p><input type="submit" id="BtnHrw" name="Btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<span>
-	 <?php  include("/php/mensajes.php"); ?>
-</span>
-<div id="mensaje" style="border:1px solid #CCC; padding:10px;"></div>
-<!--<script src="../../js/jquery-2.2.3.min.js"></script>  
-<script src="../../js/crear.js"></script> -->
+<div id="mensaje" class="alert alert-success""></div>
+
 
 
 

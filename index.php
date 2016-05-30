@@ -60,7 +60,6 @@ switch ($op)
 
 		<title><?php echo "$titulo"; ?></title>
 
-
 </head>
 <body>
 	

@@ -4,7 +4,7 @@ if(isset($_GET["mensaje"])){
 
 
 	$mensaje = $_GET["mensaje"];
-	echo "<br /> <span class='mensaje'>$mensaje</span><br />";
+	echo "<br /> <span id='mensaje' class='mensaje'>$mensaje</span><br />";
 }
 
 

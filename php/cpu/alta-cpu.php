@@ -1,4 +1,5 @@
-<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" action="php/cpu/agregar-cpu.php" accept-charset="utf-8">
+
+<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
 	
 		<div class="form-group" >
 			
@@ -6,15 +7,15 @@
 
 
 
- 				<label for="code" class="control-label">Codigo Case: </label>
+ 				<label for="code" class="codPresCpu">Codigo Case: </label>
   				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="codPresCpu">
 
 
 
 
-				<!--<label for="os" class="control-label">Sistema Operativo: </label>
+				<label for="SistemaO" class="control-label">Sistema Operativo: </label>
 								
-										<select id="OS" name="os" class="form-control">
+										<select id="os" name="SistemaO" class="form-control">
 											   <option >Elije Una opcion</option> 
 											   <option value="windows">Windows</option> 
 											   <option value="canaima">Canaima</option> 
@@ -24,7 +25,7 @@
 										
 									   </select>
 
-						-->
+						
 
 
 		</div>
@@ -79,15 +80,13 @@
 
 				
 
-				<p><input type="submit" id="enviar_get" name="enviar_btn" value="Enviar" class="btn btn-success"></p>
+				<p><input type="submit" id="BtnCpu" name="enviar_btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<span>
-	 <?php  include("/php/mensajes.php"); ?>
-</span>
-<div id="msj" style="border:1px solid #CCC; padding:10px;"></div>
-<!--<script src="../../js/jquery-2.2.3.min.js"></script>  
-<script src="../../js/crear.js"></script> -->
+<div id="mensaje" class="alert alert-success"">
+	
+</div>
+
 
 
 
