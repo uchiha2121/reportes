@@ -25,7 +25,7 @@ switch ($opi)
 			break;
 	
 	default:
-		$contenido2 = "home.php";
+		$contenido2 = "/php/cpu/home.php";
 		$titulo = "inicio";
 		break;
 }

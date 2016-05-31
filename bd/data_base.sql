@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
 		cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		nombre varchar(30) NOT NULL,
 		apellido varchar(30) NOT NULL,
-		telefono int(11) NOT NULL,
+		telefono bigint(11) NOT NULL,
 		PRIMARY KEY (cedula)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;

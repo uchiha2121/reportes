@@ -7,6 +7,4 @@ $ejecutar_consulta = $conexion->query($consulta);
  ?>
 
 
-
-
-Modificar
+Baja

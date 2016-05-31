@@ -25,7 +25,7 @@ $resultado = mysqli_query($conexion, $consulta);
 
 if($resultado) {
 die('<button class="close" data-dismiss="alert" ><span>&times;</span></button>
-	<p class="text-muted" ><strong>En hora buena:</strong>Registro con EXITO!!!</p> 
+	<p class="text-muted" ><strong>En hora buena:</strong>Registrado con EXITO!!!</p> 
 <script>$("#formHrw")[0].reset();</script>');
 };
 
