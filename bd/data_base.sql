@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
 
 CREATE TABLE IF NOT EXISTS `depto_pers` (
 
-		cod_dept_p int(3) UNSIGNED NOT NULL,
+		cod_dept_p int(3) NOT NULL AUTO_INCREMENT,
 		id_cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		id_depto int(3) UNSIGNED NOT NULL ,
 		PRIMARY KEY (cod_dept_p),

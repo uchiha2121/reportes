@@ -25,7 +25,7 @@ switch ($op)
 			break;
 
 		case "departamento":
-			$contenido= "php//home_departamento.php";
+			$contenido= "php/departamento/home_departamento.php";
 			$titulo= "Deparamento";
 			break;
 
