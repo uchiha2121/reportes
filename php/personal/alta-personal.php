@@ -1,5 +1,5 @@
 
-<form name="Validar_Get" id="formPersonal" class="form-horizontal" method="POST" action="php/personal/agregar-personal.php" accept-charset="utf-8">
+<form name="Validar_Get" id="formPersonal" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
 	
 		<div class="form-group" >
 			

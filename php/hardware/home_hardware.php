@@ -26,7 +26,7 @@ switch ($opi)
 	
 	default:
 		$contenido2 = "/php/hardware/home.php";
-		$titulo = "inicio";
+		$titulo = "hardware";
 		break;
 }
 

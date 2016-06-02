@@ -12,8 +12,8 @@ CREATE DATABASE IF NOT EXISTS `inventario_maquinas` DEFAULT CHARSET =utf8 COLLAT
 
 CREATE TABLE IF NOT EXISTS `departamentos` (
 
-		cod_depto int(3) UNSIGNED NOT NULL ,
-		nombre_depto varchar (20) NOT NULL,
+		cod_depto int(3) UNSIGNED NOT NULL UNIQUE,
+		nombre_depto varchar (20) NOT NULL UNIQUE,
 		PRIMARY KEY (cod_depto)
 
 
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `prestamo_hrw` (
 
 
 
-CREATE TABLE IF NOT EXISTS `alta_prestamo` (
+CREATE TABLE IF NOT EXISTS `baja_prestamo` (
 
 		n_alta int(4)  UNSIGNED NOT NULL AUTO_INCREMENT,
 		cedula int(8) UNSIGNED NOT NULL UNIQUE,

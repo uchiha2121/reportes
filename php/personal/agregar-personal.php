@@ -24,8 +24,9 @@ include ("/../../conexion/config.php");
 
 			$idDpto = $extraido['cod_depto'];
 
-			echo "INSERT depto_pers VALUES (null,'".$cedula."','".$idDpto."')";
-			mysqli_free_result($query);
+			$consulta2 = "INSERT depto_pers VALUES (null,'".$cedula."','".$idDpto."')";
+
+			//mysqli_free_result($query);
 			$resultado2 = mysqli_query($conexion,$consulta2);
 
 if($resultado1 && $resultado2) {
