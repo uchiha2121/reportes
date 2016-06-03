@@ -48,7 +48,8 @@
 				<p><input type="submit" id="BtnHrw" name="Btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="alert alert-success""></div>
+<div id="busqueda"> </div>
+<div id="mensaje" class="alert alert-success"></div>
 
 
 

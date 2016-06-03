@@ -38,12 +38,12 @@ switch ($opi)
 	
 
 	<nav class="col-xs- col-sm- col-xs-2 col-lg-2" > 
-			<ul class="nav nav-pills nav-stacked">
+			<ul class="text-center nav nav-pills nav-stacked ">
 					
-					<li><a 	class="cambio" href="?op=cpu&opi=alta_cpu">ALTA</a></li>
-					<li><a  class="cambio" href="?op=cpu&opi=consultas_cpu">CONSULTA</a></li>
-					<li><a  class="cambio" href="op=cpu&?opi=modificar_cpu">MODIFICAR</a></li>
-					<li><a 	class="cambio" href="?op=cpu&opi=baja_cpu">BAJA</a></li>
+					<li ><a 	class="cambio" href="?op=cpu&opi=alta_cpu">ALTA</a></li>
+					<li ><a     class="cambio" href="?op=cpu&opi=consultas_cpu">CONSULTA</a></li>
+					<li ><a     class="cambio" href="op=cpu&?opi=modificar_cpu">MODIFICAR</a></li>
+					<li ><a 	class="cambio" href="?op=cpu&opi=baja_cpu">BAJA</a></li>
 			</ul>
 			 
 	</nav>

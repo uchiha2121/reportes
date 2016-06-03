@@ -24,9 +24,19 @@ $resultado = mysqli_query($conexion, $consulta);
 
 
 if($resultado) {
-die('<button class="close" data-dismiss="alert" ><span>&times;</span></button>
-	<p class="text-muted" ><strong>En hora buena:</strong>Registrado con EXITO!!!</p> 
-<script>$("#formHrw")[0].reset();</script>');
+					die(
+
+								'<button class="close" data-dismiss="alert" ><span>&times;</span></button>
+								<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+												<span class="sr-only">Success:</span>En hora buena !</strong>
+				
+								  Su registro ha sido envida con <strong>EXITO!</strong>
+
+								<script>$("#formHrw")[0].reset();</script>'
+					);
+
+
+
 };
 
 
@@ -34,7 +44,6 @@ die('<button class="close" data-dismiss="alert" ><span>&times;</span></button>
 
 
 mysqli_close($conexion);
-//header("location: /index.php?op=cpu&opi=alta&mensaje=$mensaje");
  ?>
 
 
