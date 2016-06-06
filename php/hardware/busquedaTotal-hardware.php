@@ -5,7 +5,7 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' ";
+			$consulta = "SELECT * FROM hardware";
 
 
 			$resultado = mysqli_query($conexion,$consulta);
@@ -60,7 +60,7 @@ printf("</table>");
 
 die(
 
-'<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><span class="sr-only">Success:</span></strong> Registro encontrado con <strong>EXITO!</strong></div>'
+'<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><span class="sr-only">Success:</span></strong> Registros encontrado con <strong>EXITO!</strong></div>'
 								
 
 	);
