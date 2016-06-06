@@ -15,15 +15,15 @@ include ("/../../conexion/config.php");
 
 
 if($resultado && ($contador=mysqli_num_rows($resultado))!=0) {
-	
+	$n=1;
 
 	printf("				
 	<table id='TablaAgregadora2' class='table table-bordered'>
 				<tr>
+						<td>Nro</td>
 						<td>Serial Hardware</td>
 						<td>Nombre Accesorio</td>
-						<td>Descripcion</td>
-						
+						<td>Descripcion</td>		
 				</tr>
 
 ");
@@ -34,21 +34,19 @@ while ($row = mysqli_fetch_array($resultado)) {
 					
 					printf("
 						<tr>
-
-						<td>%s</td>
-						<td>%s</td>
-						<td>%s</td>
-
-
+							<td>%s</td>
+							<td>%s</td>
+							<td>%s</td>
+							<td>%s</td>
 						</tr>
 
 
-						",$row['serial_h'],$row['h_nombre'],$row['especificacion']);
+						",$n,$row['serial_h'],$row['h_nombre'],$row['especificacion']);
 
 
 			
 
-
+					$n++;
 					}//wile
 
 				mysqli_free_result($resultado); 

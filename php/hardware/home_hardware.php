@@ -42,7 +42,7 @@ switch ($opi)
 					
 					<li><a 	class="cambio" href="?op=hardware&opi=alta_hardware">ALTA</a></li>
 					<li><a  class="cambio" href="?op=hardware&opi=consultas_hardware">CONSULTA</a></li>
-					<li><a  class="cambio" href="op=hardware&?opi=modificar_hardware">MODIFICAR</a></li>
+					<li><a  class="cambio" href="?op=hardware&opi=modificar_hardware">MODIFICAR</a></li>
 					<li><a 	class="cambio" href="?op=hardware&opi=baja_hardware">BAJA</a></li>
 			</ul>
 			 

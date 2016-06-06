@@ -20,43 +20,39 @@ include ("/php/funciones/menu_index.php");
 	
 
 
-<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
-<main class="container-fluid">
+			<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
+			<main class="container-fluid">
 
-				<nav class="col-xs-12 col-sm-12 col-xs-10 col-lg-10"> 
-						<ul class="nav nav-pills nav-justified">
-								<li id="Hmo" ><a  class="cambio" href="index.php">HOME</a></li>
-								<li id="Epo" ><a  class="cambio" href="?op=prestamo">PRESTAMO EQUIPO</a></li>
-								<li id="Cpu" ><a  class="cambio" href="?op=cpu">CPU</a></li>
-								<li id="Hrw" ><a  class="cambio" href="?op=hardware">HARDWARE</a></li>
-								<li id="Dto" ><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
-								<li id="Per" ><a  class="cambio" href="?op=personal">PERSONAL</a></li>
-								<li id="Bja" ><a  class="cambio" href="?op=baja">BAJA PRESTAMO</a></li>
+							<nav class="col-xs-12 col-sm-12 col-xs-10 col-lg-10"> 
+									<ul class="nav nav-pills nav-justified">
+											<li id="Hmo" ><a  class="cambio" href="index.php">HOME</a></li>
+											<li id="Epo" ><a  class="cambio" href="?op=prestamo">PRESTAMO EQUIPO</a></li>
+											<li id="Cpu" ><a  class="cambio" href="?op=cpu">CPU</a></li>
+											<li id="Hrw" ><a  class="cambio" href="?op=hardware">HARDWARE</a></li>
+											<li id="Dto" ><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
+											<li id="Per" ><a  class="cambio" href="?op=personal">PERSONAL</a></li>
+											<li id="Bja" ><a  class="cambio" href="?op=baja">BAJA PRESTAMO</a></li>
 
-						</ul>
-						 
-				</nav>
-			
-<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
+									</ul>
+									 
+							</nav>
+						
+			<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
 
-<header class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></header>
-
-
-
-<section class="row">
-	
-			
-
-				<?php include $contenido;  ?>
-
-			
-
-</section>
-
-<footer></footer>
+			<header class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></header>
 
 
-</main>
+
+			<section class="row">
+
+							<?php include $contenido;  ?>
+
+			</section>
+
+			<footer></footer>
+
+
+			</main>
 
 		<script src="js/jquery-2.2.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
