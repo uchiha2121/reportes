@@ -12,7 +12,7 @@
 								<label for="busqueda">Busqueda avanzada</label>
 					  			<input type="text" name="busqueda" 	class="form-control" placeholder="Consultar...">
 
-<button type="submit" class="btn btn-info">Buscar</button>
+<button type="" class="btn btn-info">Buscar</button>
 					  </div>
 
 				
@@ -31,7 +31,7 @@
 			<div class="form-group">
 
 					  
-					  <button name="busqueda" type="submit" class="btn btn-info">Buscar todo</button>
+					  <button name="busqueda" type="" class="btn btn-info">Buscar todo</button>
 
 			</div>
 

@@ -13,13 +13,13 @@ $eliminar = "DELETE FROM hardware WHERE serial_h = '$id' ";
 
 $eliminacion = mysqli_query($conexion,$eliminar);
 
-$consulta    = "INSERT hardware VALUES ('".$id."','".$componentes."','".$descripcion."')";
+$consulta2    = "INSERT hardware VALUES ('".$id."','".$componentes."','".$descripcion."')";
 
-$resultado = mysqli_query($conexion, $consulta);
+$resultado2 = mysqli_query($conexion, $consulta2);
 
 
 
-if($eliminacion&&$resultado) {
+if($eliminacion && $resultado2) {
 					die(
 
 '<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><span class="sr-only">Success:</span></strong> Su modificacion fue <strong>EXITOSA!</strong></div>'
