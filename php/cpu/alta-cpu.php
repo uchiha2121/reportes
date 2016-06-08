@@ -1,5 +1,5 @@
 
-<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
+<form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" accept-charset="utf-8">
 	
 		<div class="form-group" >
 			
@@ -8,14 +8,15 @@
 
 
  				<label for="code" class="codPresCpu">Codigo Case: </label>
-  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="codPresCpu">
+  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="codPresCpu" required>
 
-
+  				<label for="code" class="ProCpu">Procedencia del equipo: </label>
+  				<input type="text" name="ProCpu" class="form-control" placeholder="¿De donde proviene el equipo?" required>
 
 
 				<label for="SistemaO" class="control-label">Sistema Operativo: </label>
 								
-										<select id="os" name="SistemaO" class="form-control">
+										<select id="os" name="SistemaO" class="form-control" required>
 											   <option >Elije Una opcion</option> 
 											   <option value="windows">Windows</option> 
 											   <option value="canaima">Canaima</option> 
@@ -52,7 +53,7 @@
 			<tr>
 				
 					<td>
-						<select name="componentes[]" class="form-control" >
+						<select name="componentes[]" class="form-control" required>
 									   <option >Seleccion</option> 
 									   <option value="disco duro">Disco duro</option>
 									   <option value="fuente de poder">Fuente de poder</option>  
@@ -68,7 +69,7 @@
 
 					</td>
 
-					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion"></td>
+					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion" required></td>
 					<td></td>
 
 
@@ -83,9 +84,7 @@
 				<p><input type="submit" id="BtnCpu" name="enviar_btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="alert alert-success"">
-	
-</div>
+<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
 
 
 

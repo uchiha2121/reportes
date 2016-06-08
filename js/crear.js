@@ -29,11 +29,11 @@ function funcNuevaAgregarC(){
 
 											$('<td>')
 												.append(
-													$('<select name="componentes[]" class="form-control">')
+													$('<select name="componentes[]" class="form-control" required >')
 														.append(
 
 
-														 $('<option value="-1">').text('Seleccion')
+														 $('<option>').text('Seleccion')
  															   )//select
 														.append(
          
@@ -91,7 +91,7 @@ function funcNuevaAgregarC(){
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text">')
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text" required>')
 
 											   )
 									   )
@@ -137,7 +137,7 @@ function funcNuevaAgregarC(){
 
 											$('<td>')
 												.append(
-													$('<select name="componentes[]" class="form-control">')
+													$('<select name="componentes[]" class="form-control" required>')
 														.append(
 
 
@@ -181,25 +181,50 @@ function funcNuevaAgregarC(){
 
 					         )
 
-						.append(
+					.append(
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text">')
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text" required>')
 
 											   )
-									   )
-						.append(
+									   )//td
+					.append(
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" type="text">')
+												$('<input id="searchBox" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" type="text" required>')
 
 											   )
-									   )
+									   )//td
 
 
-									   .append(
+
+					.append(
+
+											$('<td>')
+												.append(
+													$('<select name="estado[]" class="form-control" required>')
+														.append(
+
+
+														 $('<option>').text('Seleccion')
+ 															   )//select
+														.append(
+         
+             
+             												$('<option value="0">').text('Operativo')
+                     											)//option
+
+														.append(
+         
+             
+             												$('<option value="1">').text('No Operativo')
+                     											)//option
+													)//select
+											)//td
+					.append(
+
 
 									   	$('<td>')
 									   		.append(
@@ -208,7 +233,7 @@ function funcNuevaAgregarC(){
 									   			)
 
 
-									   	      )	
+									   	      )//td	
 
 
 			     );

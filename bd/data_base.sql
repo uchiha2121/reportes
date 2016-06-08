@@ -59,7 +59,8 @@ CREATE TABLE IF NOT EXISTS `prestamo_equipo` (
 		n_prestamo int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
 		cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		fecha_inicio date NOT NULL,
-		procedencia varchar(30) NOT NULL,
+		fecha_fin date NULL,
+		estado varchar(1) NOT NULL,
 		PRIMARY KEY(n_prestamo),
 		FOREIGN KEY (cedula) REFERENCES personal (cedula)
 
@@ -74,6 +75,8 @@ CREATE TABLE IF NOT EXISTS `cpu` (
 
 		cod_cpu varchar(30)  NOT NULL,
 		SO varchar(20) NOT NULL,
+		procedencia varchar(30) NOT NULL,
+		disponibilidad varchar(1) NOT NULL,
 		PRIMARY KEY(cod_cpu)
 
 
@@ -114,6 +117,8 @@ CREATE TABLE IF NOT EXISTS `hardware` (
 		 serial_h varchar(30) NOT NULL UNIQUE,
 		 h_nombre varchar(30) NOT NULL,
 		 especificacion varchar(30) NOT NULL,
+		 disponibilidad varchar(1) NOT NULL,
+		 estado varchar(1) NOT NULL,
 		PRIMARY KEY (serial_h)
 
 
@@ -134,19 +139,4 @@ CREATE TABLE IF NOT EXISTS `prestamo_hrw` (
 
 
 
-
-
-
-
-CREATE TABLE IF NOT EXISTS `baja_prestamo` (
-
-		n_alta int(4)  UNSIGNED NOT NULL AUTO_INCREMENT,
-		cedula int(8) UNSIGNED NOT NULL UNIQUE,
-		id_n_prestamo int(4) UNSIGNED NOT NULL,
-		fecha_fin date NOT NULL,
-		PRIMARY KEY(n_alta),
-		FOREIGN KEY (cedula) REFERENCES personal (cedula),
-		FOREIGN KEY (id_n_prestamo) REFERENCES prestamo_equipo (n_prestamo)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

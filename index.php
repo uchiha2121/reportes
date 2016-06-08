@@ -1,7 +1,6 @@
 <?php 
 
 include ("/php/funciones/menu_index.php");
-
  ?>
 <!DOCTYPE html>
 <html lang="es">

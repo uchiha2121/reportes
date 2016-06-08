@@ -3,9 +3,9 @@ include ("/../../conexion/config.php");
 
 			$code 			   = $_POST['codPresCpu'];
 			$sysm			   = $_POST['SistemaO'];
+			$proc			   = $_POST['ProCpu'];
 
-
-			$consulta1 = " INSERT INTO cpu VALUES ('".$code."','".$sysm."')";
+			$consulta1 = " INSERT INTO cpu VALUES ('".$code."','".$sysm."','".$proc."',0)";
 
 			$resultado1 = mysqli_query($conexion,$consulta1);
 		
@@ -15,11 +15,6 @@ include ("/../../conexion/config.php");
 			$array_componentes = $_POST['componentes'];
 			$array_descripcion = $_POST['descripcion'];
 			
-
-
-
-
-
 
 
 
@@ -36,9 +31,9 @@ $resultado2 = mysqli_query($conexion, $consulta2);
 	
 
 if($resultado1 && $resultado2) {
-die('<button class="close" data-dismiss="alert" ><span>&times;</span></button>
-	<p class="text-muted" ><strong>En hora buena:</strong>Registro con EXITO!!!</p> 
-<script>$("#formCpu")[0].reset();</script>');
+die('<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button>
+								<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+												<span class="sr-only">Success:</span>En hora buena!</strong>  Su registro ha sido envida con  <strong>EXITO!</strong></div><script>$("#formCpu")[0].reset();</script>');
 };
 
 

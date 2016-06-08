@@ -1,21 +1,22 @@
 <?php 
 include ("/../../conexion/config.php");
 
+
 			$id 	     = $_POST['codHarw'];
 			$componentes = $_POST['Componente'];
 			$descripcion = $_POST['HDescrip'];
 
-
+$conexion2 = $conexion;
 			
 $eliminar = "DELETE FROM hardware WHERE serial_h = '$id' ";
 
 
 
-$eliminacion = mysqli_query($conexion,$eliminar);
+$eliminacion = mysqli_query($conexion2,$eliminar);
 
 $consulta2    = "INSERT hardware VALUES ('".$id."','".$componentes."','".$descripcion."')";
 
-$resultado2 = mysqli_query($conexion, $consulta2);
+$resultado2 = mysqli_query($conexion2, $consulta2);
 
 
 

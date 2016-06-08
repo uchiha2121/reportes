@@ -4,15 +4,16 @@ include ("/../../conexion/config.php");
 			$id 			   = $_POST['codPresHwr'];
 			$array_componentes = $_POST['componentes'];
 			$array_descripcion = $_POST['descripcion'];
+			$array_estado      = $_POST['estado'];
 
 
-			
-$sql_array = array();
+
 foreach ($array_componentes as $key => $componentes) {
 
 	$codHwr      =  $id[$key];
 	$descripcion =  $array_descripcion[$key];
-	$consulta    = "INSERT hardware VALUES ('".$codHwr."','".$componentes."','".$descripcion."')";
+	$estadoO     =  $array_estado[$key];
+	$consulta    = "INSERT hardware VALUES ('".$codHwr."','".$componentes."','".$descripcion."',0,'".$estadoO."')";
 
 
 
@@ -26,11 +27,9 @@ $resultado = mysqli_query($conexion, $consulta);
 if($resultado) {
 					die(
 
-								'<button class="close" data-dismiss="alert" ><span>&times;</span></button>
+								'<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button>
 								<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-												<span class="sr-only">Success:</span>En hora buena !</strong>
-				
-								  Su registro ha sido envida con <strong>EXITO!</strong>
+												<span class="sr-only">Success:</span>En hora buena! </strong> Su registro ha sido envida con <strong>EXITO!</strong></div>
 
 								<script>$("#formHrw")[0].reset();</script>'
 					);

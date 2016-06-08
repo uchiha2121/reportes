@@ -13,13 +13,14 @@
 						<td>Nombre Accesorio</td>
 						<td>Descripcion</td>
 						<td>Serial Hardware</td>
+						<td>Estado</td>
 						<td>Opcion</td>
 				</tr>
 
 				<tr>
 					
 						<td>
-									<select name="componentes[]" class="form-control" >
+									<select name="componentes[]" class="form-control" required>
 										   <option >Seleccion</option> 
 										   <option value="monitor">Monitor</option>
 										   <option value="teclado">Teclado</option>  
@@ -32,8 +33,15 @@
 
 						</td>
 
-						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion"></td>
-						<td>	<input type="text" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" id="descripcion"></td>
+						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" required></td>
+						<td>	<input type="text" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware"  required></td>
+						<td><select name="estado[]" class="form-control" >
+										   <option >Seleccion</option> 
+										   <option value="0">Operativo</option>
+										   <option value="1">No Operativo</option>  
+										   
+										   
+									 </select></td>
 						<td></td>
 
 
@@ -48,7 +56,7 @@
 				<p><input type="submit" id="BtnHrw" name="Btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="alert alert-success"></div>
+<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
 
 
 

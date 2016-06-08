@@ -1,6 +1,7 @@
 <?php 
 include ("/../../conexion/config.php");
 
+
 			
 			$busqueda = $_POST['busqueda'];
 
@@ -17,7 +18,7 @@ $row = mysqli_fetch_array($resultado);
 
 if($resultado && ($contador=mysqli_num_rows($resultado))!=0) {
 ?>	
- 	<form id="formEdHrw" class='form-horizontal' method="POST" accept-charset="utf-8" >
+ 	<form id="formEdHrw" class='form-horizontal formEdHrw' method="POST" accept-charset="utf-8" >
 
 
 
@@ -55,50 +56,54 @@ if($resultado && ($contador=mysqli_num_rows($resultado))!=0) {
 
 
 </form>
+<script src="js/jquery-2.2.3.min.js"></script>
+
+<script>
+	
+	$(document).on('ready',funcAjaxx);
+
+	function funcAjaxx (){
+
+$(".formEdHrw").on("submit", function(e){
+	
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(this);
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/agregar-modificacion-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
 
 
+	}).done(function(data){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(data);
+		mensaje.slideDown(500); });
+}
+
+);
+
+	}
+</script>
 
 
 <?php
 
-// 	printf("<form name='Validar_Get' id='formEdHrw' class='form-horizontal' method='POST' action='php/hardware/agregar-modificacion-hardware.php' accept-charset='utf-8'  >");
-
-
-
-// printf("<table class='table table-bordered'>");
-
-
-// printf("<tr>
-// 						<td>Serial Hardware</td>
-// 						<td>Nombre Accesorio</td>
-// 						<td>Descripcion</td>
-						
-// 				</tr>");
-
-// printf("<tr>");
-
-// printf("<td><input type='text' name='idhardware' class='form-control'  id='disabledTextInput' value='%s' disabled></td>",$row['serial_h']);
-// printf("<input type='hidden' name='codHarw' value='%s' >",$row['serial_h']);
-
-// printf("<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value='%s' disabled></td>",$row['h_nombre']);
-// printf("<input type='hidden' name='Componente'  value='%s' >",$row['h_nombre']);
-
-// printf("<td><input type='text' name='HDescrip' class='form-control' value='%s' ></td>",$row['especificacion']);
-
-
-// printf("</tr>");
-
-
-
-
-// printf("</table>");
-
-
-				 
-//  printf("<p><input type='submit' id='BtnHrw' name='Btn' value='Modificar' class='btn btn-success'></p>");
-
-
-// printf("</form>");
 
 
 die(
