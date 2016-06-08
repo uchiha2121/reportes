@@ -1,7 +1,7 @@
 
 <h2>Modificar Hardware</h2>
 
-<form name="Validar_Get" id="formModHrw" method="POST" action="php/hardware/busqueda-modificar-hardware.php" accept-charset="utf-8" class="navbar-form navbar-left">
+<form name="Validar_Get" id="formModHrw" method="POST" accept-charset="utf-8" class="navbar-form navbar-left">
 
 <div class="row">
 
@@ -24,7 +24,6 @@
 
 					
 </form>
-
 
 
 <div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>

@@ -1,5 +1,5 @@
 var mensaje = $("#mensaje");
-
+var contenido =$("#contenido");
 //Ocultamos el contenedor
 
 $(document).on('ready',funcAjax);
@@ -7,6 +7,15 @@ $(document).on('ready',funcAjax);
 
 
 function funcAjax (){
+
+
+
+
+
+
+
+
+	                                             //                        HARDWARE                             //   
 //FORMULARIO ALTA HARDWARE
 //Cuando el formulario con ID add se envíe...
 $("#formHrw").on("submit", function(e){
@@ -38,7 +47,7 @@ $("#formHrw").on("submit", function(e){
 		mensaje.slideDown(500); });
 });
 
-
+              
 // FORMULARIO CONSULTA HARDWARE
 //Cuando el formulario con ID add se envíe...
 $("#formConHrw").on("submit", function(e){
@@ -102,71 +111,71 @@ $("#formConHrwT").on("submit", function(e){
 });
 
 
-// // FORMULARIO BUSQUEDA MODIFICAR HARDWARE
-// //Cuando el formulario con ID add se envíe...
-// $("#formModHrw").on("submit", function(e){
-// 	//Evitamos que se envíe por defecto
-// 	e.preventDefault();
-// 	//Creamos un FormData con los datos del mismo formulario
-// 	var formData = new FormData(document.getElementById("formModHrw"));
+// FORMULARIO BUSQUEDA MODIFICAR HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formModHrw").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formModHrw"));
 
-// 	//Llamamos a la función AJAX de jQuery
-// 	$.ajax({
-// 		//Definimos la URL del archivo al cual vamos a enviar los datos
-// 		url: "php/hardware/busqueda-modificar-hardware.php",
-// 		//Definimos el tipo de método de envío
-// 		type: "POST",
-// 		//Definimos el tipo de datos que vamos a enviar y recibir
-// 		dataType: "HTML",
-// 		//Definimos la información que vamos a enviar
-// 		data: formData,
-// 		//Deshabilitamos el caché
-// 		cache: false,
-// 		//No especificamos el contentType
-// 		contentType: false,
-// 		//No permitimos que los datos pasen como un objeto
-// 		processData: false
-// 	}).done(function(echo){
-// 		//Cuando recibamos respuesta, la mostramos
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/busqueda-modificar-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
 		
-// 		mensaje.html(echo);
-// 		mensaje.slideDown(500); });
-// });
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
 
 
-// // FORMULARIO EDITAR DE HARDWARE
-// //Cuando el formulario con ID add se envíe...
-// $("#formEdHrw").on("submit", function(e){
-// 	//Evitamos que se envíe por defecto
-// 	e.preventDefault();
-// 	//Creamos un FormData con los datos del mismo formulario
-// 	var formData = new FormData(document.getElementById("formEdHrw"));
+// FORMULARIO EDITAR DE HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formEdHrw").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formEdHrw"));
 
-// 	//Llamamos a la función AJAX de jQuery
-// 	$.ajax({
-// 		//Definimos la URL del archivo al cual vamos a enviar los datos
-// 		url: "php/hardware/agregar-modificacion-hardware.php",
-// 		//Definimos el tipo de método de envío
-// 		type: "POST",
-// 		//Definimos el tipo de datos que vamos a enviar y recibir
-// 		dataType: "HTML",
-// 		//Definimos la información que vamos a enviar
-// 		data: formData,
-// 		//Deshabilitamos el caché
-// 		cache: false,
-// 		//No especificamos el contentType
-// 		contentType: false,
-// 		//No permitimos que los datos pasen como un objeto
-// 		processData: false
-// 	}).done(function(echo){
-// 		//Cuando recibamos respuesta, la mostramos
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/agregar-modificacion-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
 		
-// 		mensaje.html(echo);
-// 		mensaje.slideDown(500); });
-// });
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
 
 
-
+                                             //                              CPU                               //
 // FORMULARIO ALTA CPU
 //Cuando el formulario con ID add se envíe...
 $("#formCpu").on("submit", function(e){
@@ -268,6 +277,7 @@ $("#formPersonal").on("submit", function(e){
 
 
 
+}//FUNCION
 
 
 
@@ -276,6 +286,10 @@ $("#formPersonal").on("submit", function(e){
 
 
 
-}
+
+
+
+
+
 
 
