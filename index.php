@@ -1,5 +1,4 @@
 <?php 
-
 include ("/php/funciones/menu_index.php");
  ?>
 <!DOCTYPE html>
@@ -7,11 +6,14 @@ include ("/php/funciones/menu_index.php");
 <head>
 
 		<meta charset="UTF-8">
-			
+			<!-- bootstrap -->
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-
+		 <!-- Alertity -->
+    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" id="toggleCSS" />
+	   <!--titulo  -->
 		<title><?php echo "$titulo"; ?></title>
 
 </head>
@@ -55,7 +57,10 @@ include ("/php/funciones/menu_index.php");
 
 		<script src="js/jquery-2.2.3.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/crear.js"></script>
-		<script src="js/ajax.js"></script>
+		<script src="js/alertify/lib/alertify.min.js"></script>
+		<script type="text/javascript" src="js/crear.js"></script>
+		<script type="text/javascript" src="js/ajax.js"></script>
+		<script type="text/javascript" src="js/ajax_prestamo.js"></script>
+
 </body>
 </html>

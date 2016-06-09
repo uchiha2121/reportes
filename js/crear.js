@@ -9,7 +9,7 @@ function funcAgregar(){
 	$("body").on('click','.btn-danger',funcEliminarFila);
 }
 
-
+														//funcion agregar componentes del CPU
 function funcNuevaAgregarC(){
 	
 	
@@ -117,7 +117,7 @@ function funcNuevaAgregarC(){
 	}
 
 
-
+                                                                   // funcion para gregar componentes del HARDWARE
 	function funcNuevaAgregarH(){
 	
 	
@@ -162,12 +162,17 @@ function funcNuevaAgregarC(){
 														.append(
          
              
-             												$('<option value="cornetas">').text('Cornetas')
+             												$('<option value="impresora">').text('Impresora')
                      											)//option
 														.append(
          
              
-             												$('<option value="audifonos">').text('Audifonos')
+             												$('<option value="regulador">').text('regulador')
+                     											)//option
+														.append(
+         
+             
+             												$('<option value="cornetas">').text('Cornetas')
                      											)//option
 														.append(
          

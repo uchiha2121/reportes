@@ -25,8 +25,9 @@
 										   <option value="monitor">Monitor</option>
 										   <option value="teclado">Teclado</option>  
 										   <option value="mouse">Mouse</option>
+										   <option value="impresora">Impresora</option>
+										   <option value="regulador">Regulador</option>  
 										   <option value="cornetas">Cornetas</option> 
-										   <option value="audifonos">Tarjeta madre</option> 
 										   <option value="camara web">Camara Web</option> 
 										   
 									 </select>
