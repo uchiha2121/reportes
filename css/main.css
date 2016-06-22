@@ -1,3 +1,9 @@
+header.hdr{
+
+@gray-base;
+
+}
+
 h1, h2 {
 
 text-align: center;
@@ -10,3 +16,4 @@ display: none;
 
 
 }
+
