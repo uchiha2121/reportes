@@ -2,7 +2,7 @@
 include ("/../../conexion/config.php");
 
 
-$consulta = "SELECT nombre_depto FROM departamentos ORDER BY nombre_depto";
+$consulta = "SELECT * FROM departamentos ORDER BY nombre_depto";
 
 
 $resultado = mysqli_query($conexion,$consulta); 

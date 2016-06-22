@@ -33,7 +33,7 @@ function funcNuevaAgregarC(){
 														.append(
 
 
-														 $('<option>').text('Seleccion')
+														 $('<option value="">').text('Seleccion')
  															   )//select
 														.append(
          
@@ -91,7 +91,7 @@ function funcNuevaAgregarC(){
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text" required>')
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="3" type="text" required >')
 
 											   )
 									   )
@@ -137,11 +137,11 @@ function funcNuevaAgregarC(){
 
 											$('<td>')
 												.append(
-													$('<select name="componentes[]" class="form-control" required>')
+													$('<select name="componentes[]" class="form-control" required >')
 														.append(
 
 
-														 $('<option value="-1">').text('Seleccion')
+														 $('<option value="">').text('Seleccion')
  															   )//select
 														.append(
          
@@ -190,15 +190,15 @@ function funcNuevaAgregarC(){
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" type="text" required>')
-
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="10" type="text" required >')
+												
 											   )
 									   )//td
 					.append(
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" type="text" required>')
+												$('<input id="searchBox" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware" type="text" required >')
 
 											   )
 									   )//td
@@ -209,11 +209,11 @@ function funcNuevaAgregarC(){
 
 											$('<td>')
 												.append(
-													$('<select name="estado[]" class="form-control" required>')
+													$('<select name="estado[]" class="form-control" required >')
 														.append(
 
 
-														 $('<option>').text('Seleccion')
+														 $('<option value="">').text('Seleccion')
  															   )//select
 														.append(
          

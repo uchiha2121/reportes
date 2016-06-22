@@ -2,7 +2,7 @@
 include ("/../../conexion/config.php");
 
 
-			$consulta = "SELECT * FROM hardware";
+			$consulta = "SELECT * FROM hardware WHERE estado=1";
 
 
 			$resultado = mysqli_query($conexion,$consulta);
@@ -11,7 +11,7 @@ include ("/../../conexion/config.php");
 
 
 
-if($resultado && ($contador=mysqli_num_rows($resultado))!=0) {
+if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 	$n=1;
 
 	printf("				

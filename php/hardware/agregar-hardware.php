@@ -8,6 +8,8 @@ include ("/../../conexion/config.php");
 
 
 
+
+
 foreach ($array_componentes as $key => $componentes) {
 
 	$codHwr      =  $id[$key];

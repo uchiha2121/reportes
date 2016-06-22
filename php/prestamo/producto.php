@@ -149,3 +149,26 @@ function getByid($id){
 
 
 }//principal
+
+
+
+
+class ProductoCase{
+
+function get(){
+		$sql = "SELECT * FROM cpu WHERE disponibilidad=0 AND estado=0" ;
+		global $conexion;
+		return $conexion->query($sql);
+}//get
+
+function getByid($id){
+		$sql = "SELECT * FROM cpu WHERE cod_cpu=$id";
+		global $conexion;
+		return $conexion->query($sql);
+
+
+}//getByid
+
+
+}//principal
+?>

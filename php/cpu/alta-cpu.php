@@ -8,20 +8,31 @@
 
 
  				<label for="code" class="codPresCpu">Codigo Case: </label>
-  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="codPresCpu" required>
+  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="code" maxlength="30" minlength="5" required >
 
-  				<label for="code" class="ProCpu">Procedencia del equipo: </label>
-  				<input type="text" name="ProCpu" class="form-control" placeholder="¿De donde proviene el equipo?" required>
+  				<label for="proce" class="ProCpu">Procedencia del equipo: </label>
+  				<input type="text" id="proce" name="ProCpu" class="form-control" placeholder="¿De donde proviene el equipo?" maxlength="30" minlength="3" required >
 
 
 				<label for="SistemaO" class="control-label">Sistema Operativo: </label>
 								
-										<select id="os" name="SistemaO" class="form-control" required>
-											   <option >Elije Una opcion</option> 
+										<select id="SistemaO" name="SistemaO" class="form-control" required >
+											   <option value="">Elije Una opcion</option> 
 											   <option value="windows">Windows</option> 
 											   <option value="canaima">Canaima</option> 
 											   <option value="ubuntu">Ubuntu</option>
 											   <option value="linux">Linux</option>
+
+										
+									   </select>
+				<label for="estado" class="control-label">Estado del case: </label>
+								
+										<select id="estado" name="estado" class="form-control" required >
+											   <option value="">Elije Una opcion</option> 
+											   <option value="0">operativo</option> 
+											   <option value="1">no operativo</option> 
+											  
+
 
 										
 									   </select>
@@ -53,8 +64,8 @@
 			<tr>
 				
 					<td>
-						<select name="componentes[]" class="form-control" required>
-									   <option >Seleccion</option> 
+						<select name="componentes[]" class="form-control" required >
+									   <option value="">Seleccion</option> 
 									   <option value="disco duro">Disco duro</option>
 									   <option value="fuente de poder">Fuente de poder</option>  
 									   <option value="memoria ram">memoria RAM</option>
@@ -69,7 +80,7 @@
 
 					</td>
 
-					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion" required></td>
+					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion" required ></td>
 					<td></td>
 
 

@@ -146,6 +146,152 @@ $("#formModHrw").on("submit", function(e){
 
 
 
+
+// FORMULARIO BUSQUEDA NO OPERATIVO HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formConHrwNP").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formConHrwNP"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/busquedaNoOperativo-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO BUSQUEDA DISPONIBLE HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formConHrwD").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formConHrwD"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/busquedaDisponibles-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO BUSQUEDA EN USO HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formConHrwND").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formConHrwND"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/busquedaEnUso-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+
+// FORMULARIO BUSQUEDA BAJA HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formConHrwBaja").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formConHrwBaja"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/busqueda-baja-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+
+
                                              //                              CPU                               //
 // FORMULARIO ALTA CPU
 //Cuando el formulario con ID add se envíe...
@@ -180,6 +326,252 @@ $("#formCpu").on("submit", function(e){
 
 
 
+
+
+
+
+// FORMULARIO CONSULTA BUSQUEDA AVANZADA CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuBa").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuBa"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/consulta-busqueda-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+// FORMULARIO CONSULTA BUSQUEDA TOTAL CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuBT").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuBT"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/consulta-busqueda-Total-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO CONSULTA BUSQUEDA NO OPERATIVOS CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuNop").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuNop"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/consulta-busqueda-NoOperativo-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO CONSULTA BUSQUEDA DISPONIBLES CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuD").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuD"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/consulta-busqueda-Disponibles-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO CONSULTA BUSQUEDA EN USO CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuEu").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuEu"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/consulta-busqueda-EnUso-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO MODIFICAR BUSQUEDA CPU
+//Cuando el formulario con ID add se envíe...
+$("#formModCpu").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formModCpu"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/modificar-busqueda-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+// FORMULARIO baja BUSQUEDA CPU
+//Cuando el formulario con ID add se envíe...
+$("#formCpuBaja").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formCpuBaja"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/cpu/baja-busqueda-cpu.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+																//      departamento     //
 // FORMULARIO ALTA DEPARTAMENTO
 //Cuando el formulario con ID add se envíe...
 $("#formDpto").on("submit", function(e){
@@ -214,6 +606,10 @@ $("#formDpto").on("submit", function(e){
 
 
 
+
+
+
+															//           personal             //
 // FORMULARIO ALTA PERSONAL
 //Cuando el formulario con ID add se envíe...
 $("#formPersonal").on("submit", function(e){
@@ -246,6 +642,183 @@ $("#formPersonal").on("submit", function(e){
 });
 
 
+
+
+// FORMULARIO CONSULTA PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formPerBus").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formPerBus"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/personal/consulta-busqueda-personal.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+// FORMULARIO CONSULTA TOTAL PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formPerBT").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formPerBT"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/personal/consulta-busqueda-Total-personal.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+
+// FORMULARIO CONSULTA TOTAL PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formPerBdep").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formPerBdep"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/personal/consulta-busqueda-Dpto-personal.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+// FORMULARIO CONSULTA TOTAL PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formModPer").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formModPer"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/personal/modificar-busqueda-personal.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+
+
+													//   PRESTAMO DE EQUIPOS //
+
+
+
+// FORMULARIO ALTA PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formPres").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formPres"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/prestamo/agregar-prestamo.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
 
 
 }//FUNCION

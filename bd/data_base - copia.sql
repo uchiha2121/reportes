@@ -28,28 +28,11 @@ CREATE TABLE IF NOT EXISTS `personal` (
 		nombre varchar(30) NOT NULL,
 		apellido varchar(30) NOT NULL,
 		telefono bigint(11) NOT NULL,
-		PRIMARY KEY (cedula)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
-
-
-
-CREATE TABLE IF NOT EXISTS `depto_pers` (
-
-		cod_dept_p int(3) NOT NULL AUTO_INCREMENT,
-		id_cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		id_depto int(3) UNSIGNED NOT NULL ,
-		PRIMARY KEY (cod_dept_p),
-		FOREIGN KEY (id_cedula) REFERENCES personal (cedula),
+		PRIMARY KEY (cedula),
 		FOREIGN KEY (id_depto) REFERENCES departamentos (cod_depto)
-		ON DELETE CASCADE
-
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
 
 
 
@@ -84,17 +67,27 @@ CREATE TABLE IF NOT EXISTS `cpu` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+CREATE TABLE IF NOT EXISTS `componentes_cpu` (
+
+	 cod_compo_c int(4) NOT NULL AUTO_INCREMENT,
+	 nombre_c varchar(50) NOT NULL,
+	 PRIMARY KEY (cod_compo_c)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
 
 CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 
 	 cod_carac int(5) NOT NULL AUTO_INCREMENT,
-	 c_nombre varchar(30) NOT NULL,
 	 especificacion varchar(50) NOT NULL,
+	 id_compo_c int(4) NOT NULL,
 	 id_cpu varchar(30) NOT NULL,
 	 PRIMARY KEY (cod_carac),
-     FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu)
-
+     FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu),
+	 FOREIGN KEY (id_compo_c) REFERENCES componentes_cpu (cod_compo_c)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
 
 
 
@@ -110,18 +103,24 @@ CREATE TABLE IF NOT EXISTS `prestamo_cpu` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+CREATE TABLE IF NOT EXISTS `componentes_hrw` (
 
+	 cod_compo_h int(4) NOT NULL AUTO_INCREMENT,
+	 nombre_h varchar(50) NOT NULL,
+	 PRIMARY KEY (cod_compo_h)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
 CREATE TABLE IF NOT EXISTS `hardware` (
 
 		 serial_h varchar(30) NOT NULL UNIQUE,
-		 h_nombre varchar(30) NOT NULL,
+		 
 		 especificacion varchar(50) NOT NULL,
 		 disponibilidad varchar(1) NOT NULL,
 		 estado varchar(1) NOT NULL,
-		PRIMARY KEY (serial_h)
-
+		 id_compo_h int(4) NOT NULL,
+		PRIMARY KEY (serial_h),
+		FOREIGN KEY (id_compo_h) REFERENCES  componentes_hrw (cod_compo_h)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

@@ -1,9 +1,3 @@
-header.hdr{
-
-@gray-base;
-
-}
-
 h1, h2 {
 
 text-align: center;
@@ -17,3 +11,17 @@ display: none;
 
 }
 
+
+button.btn-warning{
+
+	background-color: #FF4646;
+	
+}
+
+
+.tabla-principal {
+
+
+	background-color: #40ACFF;
+	color: white;
+}

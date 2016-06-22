@@ -9,10 +9,7 @@ switch ($opi)
 			$titulo = 'Alta de cpu';
 			break;
 
-		case "baja_cpu":
-			$contenido2 = "baja-cpu.php";
-			$titulo = "Baja de cpu";
-			break;
+		
 
 		case "consultas_cpu":
 			$contenido2 = "consulta-cpu.php";
@@ -23,10 +20,15 @@ switch ($opi)
 			$contenido2 = "modificar-cpu.php";
 			$titulo = "modificar cpu";
 			break;
-	
+
+		case "baja_cpu":
+				$contenido2 = "baja-cpu.php";
+				$titulo = "Baja de cpu";
+				break;
+
 	default:
 		$contenido2 = "/php/cpu/home.php";
-		$titulo = "inicio";
+		$titulo = "Cpu";
 		break;
 }
 
@@ -42,7 +44,7 @@ switch ($opi)
 					
 					<li ><a 	class="cambio" href="?op=cpu&opi=alta_cpu">ALTA</a></li>
 					<li ><a     class="cambio" href="?op=cpu&opi=consultas_cpu">CONSULTA</a></li>
-					<li ><a     class="cambio" href="op=cpu&?opi=modificar_cpu">MODIFICAR</a></li>
+					<li ><a     class="cambio" href="?op=cpu&opi=modificar_cpu">MODIFICAR</a></li>
 					<li ><a 	class="cambio" href="?op=cpu&opi=baja_cpu">BAJA</a></li>
 			</ul>
 			 

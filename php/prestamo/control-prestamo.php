@@ -23,14 +23,12 @@ switch($page){
 				$producto_id = $_POST['producto_id'];
 				
 				$resultado_producto = $objProducto->getById($producto_id);
-				$producto = $resultado_producto->fetchObject();
+				$producto = $resultado_producto->fetch_object();
 				$nombre = $producto->h_nombre;
-				$descripcion = $producto->descripcion;
+				$descripcion = $producto->especificacion;
 				
 				
-				
-				
-				$_SESSION['detalle'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
 
 				$json['success'] = true;
 
@@ -48,14 +46,295 @@ switch($page){
 		}
 		break;
 
+
+
 	case 2:
+		$objProducto = new ProductoTeclado();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+
+			case 3:
+		$objProducto = new ProductoMause();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+
+			case 4:
+		$objProducto = new ProductoImpresora();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+
+
+			case 5:
+		$objProducto = new ProductoRegulador();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+
+
+			case 6:
+		$objProducto = new ProductoCornetas();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+
+		case 7:
+		$objProducto = new ProductoCamaraWeb();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto->h_nombre;
+				$descripcion = $producto->especificacion;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+
+		case 8:
+		$objProducto = new ProductoCase();
+		$json = array();
+		$json['msj'] = 'Producto Agregado';
+		$json['success'] = true;
+	
+		if (isset($_POST['producto_id']) && $_POST['producto_id']!='') {
+			try {
+
+				$producto_id = $_POST['producto_id'];
+				
+				$resultado_producto = $objProducto->getById($producto_id);
+				$producto = $resultado_producto->fetch_object();
+				$nombre = $producto_id;
+				$descripcion = $producto->SO;
+				
+				
+				$_SESSION['detalles'][$producto_id] = array('id'=>$producto_id, 'nombre'=>$nombre, 'especificacion'=>$descripcion);
+
+				$json['success'] = true;
+
+				echo json_encode($json);
+	
+			} catch (PDOException $e) {
+				$json['msj'] = $e->getMessage();
+				$json['success'] = false;
+				echo json_encode($json);
+			}
+		}else{
+			$json['msj'] = 'Ingrese un producto';
+			$json['success'] = false;
+			echo json_encode($json);
+		}
+		break;
+
+
+
+
+	case 9:
 		$json = array();
 		$json['msj'] = 'Producto Eliminado';
 		$json['success'] = true;
 	
 		if (isset($_POST['id'])) {
 			try {
-				unset($_SESSION['detalle'][$_POST['id']]);
+				unset($_SESSION['detalles'][$_POST['id']]);
 				$json['success'] = true;
 	
 				echo json_encode($json);
@@ -70,3 +349,4 @@ switch($page){
 
 }
 ?>
+

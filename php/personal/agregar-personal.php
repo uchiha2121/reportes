@@ -30,10 +30,18 @@ include ("/../../conexion/config.php");
 			$resultado2 = mysqli_query($conexion,$consulta2);
 
 if($resultado1 && $resultado2) {
-die('<button class="close" data-dismiss="alert" ><span>&times;</span></button>
-	<p class="text-muted" ><strong>En hora buena: </strong>Registrado con EXITO!!!</p> 
-<script>$("#formPersonal")[0].reset();</script>');
-};
+					die(
+
+								'<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button>
+								<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+												<span class="sr-only">Success:</span>En hora buena! </strong> Su registro ha sido envida con <strong>EXITO!</strong></div>
+
+								<script>$("#formPersonal")[0].reset();</script>'
+					);
+
+
+
+}
 
 
 

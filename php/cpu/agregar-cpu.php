@@ -4,8 +4,9 @@ include ("/../../conexion/config.php");
 			$code 			   = $_POST['codPresCpu'];
 			$sysm			   = $_POST['SistemaO'];
 			$proc			   = $_POST['ProCpu'];
+			$estado			   = $_POST['estado'];
 
-			$consulta1 = " INSERT INTO cpu VALUES ('".$code."','".$sysm."','".$proc."',0)";
+			$consulta1 = " INSERT INTO cpu VALUES ('".$code."','".$sysm."','".$proc."',0,'".$estado."')";
 
 			$resultado1 = mysqli_query($conexion,$consulta1);
 		
@@ -31,6 +32,8 @@ $resultado2 = mysqli_query($conexion, $consulta2);
 	
 
 if($resultado1 && $resultado2) {
+
+
 die('<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button>
 								<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 												<span class="sr-only">Success:</span>En hora buena!</strong>  Su registro ha sido envida con  <strong>EXITO!</strong></div><script>$("#formCpu")[0].reset();</script>');

@@ -26,7 +26,7 @@ switch ($opi)
 	
 	default:
 		$contenido2 = "/php/personal/home.php";
-		$titulo = "inicio";
+		$titulo = "Personal";
 		break;
 }
 
@@ -42,7 +42,7 @@ switch ($opi)
 					
 					<li><a 	class="cambio" href="?op=personal&opi=alta_personal">ALTA</a></li>
 					<li><a  class="cambio" href="?op=personal&opi=consultas_personal">CONSULTA</a></li>
-					<li><a  class="cambio" href="op=personal&?opi=modificar_personal">MODIFICAR</a></li>
+					<li><a  class="cambio" href="?op=personal&opi=modificar_personal">MODIFICAR</a></li>
 					<li><a 	class="cambio" href="?op=personal&opi=baja_personal">BAJA</a></li>
 			</ul>
 			 

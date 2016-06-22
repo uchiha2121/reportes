@@ -6,7 +6,7 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' ";
+			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' WHERE estado='0'";
 
 
 			$resultado = mysqli_query($conexion,$consulta);
@@ -35,19 +35,19 @@ if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 
 <tr>
 
-<td><input type='text' name='idhardware' class='form-control'  id='disabledTextInput' value='<?php  echo $row['serial_h']?>' disabled ></td>
+<td><input type='text' name='idhardware' class='form-control'  id='disabledTextInput' value='<?php  echo $row['serial_h']?>' disabled></td>
 <input type='hidden' name='codHarw' value='<?php    echo $row['serial_h']  ?>' >
 
-<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value="<?php    echo $row['h_nombre'] ?>" disabled ></td>
+<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value="<?php    echo $row['h_nombre'] ?>" disabled></td>
 
 
-<td><input type='text' name='HDescrip' class='form-control' required   maxlength="50" minlength="10"  value='<?php    echo $row['especificacion']  ?>' ></td>
+<td><input type='text' name='HDescrip' class='form-control'  value='<?php    echo $row['especificacion']  ?>' disabled></td>
 
 
 
 
 <td>
-							<select name='Estado' class="form-control" required>
+							<select name='Estado' class="form-control" disabled>
 							
 							<option value="">Seleccion</option> 
 							<option value="0" <?php if($row['estado'] == '0'){echo 'selected';} ?> >Operativo</option>
@@ -65,7 +65,7 @@ if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 
 
 				 
- <p><input type='submit' id='BtnHrw' name='Btn' value='Modificar' class='btn btn-success'></p>
+ <p><input type='submit' id='BtnHrw' name='Btn' value='eliminar' class='btn btn-success'></p>
 
 
 </form>
@@ -87,7 +87,7 @@ $(".formEdHrw").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/agregar-modificacion-hardware.php",
+		url: "php/hardware/agregar-baja-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

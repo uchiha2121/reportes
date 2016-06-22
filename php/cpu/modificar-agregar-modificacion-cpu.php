@@ -2,14 +2,15 @@
 include ("/../../conexion/config.php");
 
 
-			$id 	     = $_POST['codHarw'];
-			$descripcion = $_POST['HDescrip'];
-			$estado      = $_POST['Estado'];
+			$cedula	        = $_POST['cedula'];
+			$nombre         = $_POST['nombre'];
+			$apellido       = $_POST['apellido'];
+			$telefono       = $_POST['telefono'];
+			$departamento   = $_POST['departamento'];
 
-$consulta = "UPDATE hardware SET especificacion='$descripcion', estado='$estado' WHERE serial_h='$id'";
 
-$resultado = mysqli_query($conexion, $consulta);
-
+$consulta = "UPDATE `personal` INNER JOIN depto_pers on personal.cedula = depto_pers.id_cedula SET nombre='$nombre', apellido='$apellido', telefono='$telefono', id_depto='$departamento'  WHERE cedula='$cedula'";
+			$resultado = mysqli_query($conexion,$consulta);
 
 
 if($resultado) {
@@ -29,7 +30,7 @@ if($resultado) {
 			);
 
 
-};
+}
 
 
 

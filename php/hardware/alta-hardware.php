@@ -21,7 +21,7 @@
 					
 						<td>
 									<select name="componentes[]" class="form-control" required>
-										   <option >Seleccion</option> 
+										   <option value="">Seleccion</option> 
 										   <option value="monitor">Monitor</option>
 										   <option value="teclado">Teclado</option>  
 										   <option value="mouse">Mouse</option>
@@ -34,10 +34,10 @@
 
 						</td>
 
-						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" required></td>
-						<td>	<input type="text" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware"  required></td>
-						<td><select name="estado[]" class="form-control" >
-										   <option >Seleccion</option> 
+						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="10" required></td>
+						<td>	<input type="text" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware"  maxlength="30" minlength="5" required></td>
+						<td><select name="estado[]" class="form-control" required="">
+										   <option value="">Seleccion</option> 
 										   <option value="0">Operativo</option>
 										   <option value="1">No Operativo</option>  
 										   

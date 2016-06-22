@@ -1,4 +1,5 @@
 <?php 
+
 include ("/php/funciones/menu_index.php");
  ?>
 <!DOCTYPE html>
@@ -14,12 +15,17 @@ include ("/php/funciones/menu_index.php");
     <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
 	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" id="toggleCSS" />
 	   <!--titulo  -->
+
+	   <link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<title><?php echo "$titulo"; ?></title>
 
 </head>
 <body>
 	
+<header id="" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12 hdr" >
+	<span>Sistema para el control de reportes</span>
 
+</header>
 
 			<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
 			<main class="container-fluid">
@@ -40,9 +46,6 @@ include ("/php/funciones/menu_index.php");
 						
 			<spam class="col-xs-0 col-sm-0 col-xs-1 col-lg-1"></spam>
 
-			<header class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></header>
-
-
 
 			<section class="row">
 
@@ -54,13 +57,9 @@ include ("/php/funciones/menu_index.php");
 
 
 			</main>
-
-		<script src="js/jquery-2.2.3.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/alertify/lib/alertify.min.js"></script>
-		<script type="text/javascript" src="js/crear.js"></script>
-		<script type="text/javascript" src="js/ajax.js"></script>
-		<script type="text/javascript" src="js/ajax_prestamo.js"></script>
+<?php 
+include ("php/funciones/scripts.php");
+ ?>		
 
 </body>
 </html>
