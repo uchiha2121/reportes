@@ -38,7 +38,6 @@ include ("/php/funciones/menu_index.php");
 											<li id="Hrw" ><a  class="cambio" href="?op=hardware">HARDWARE</a></li>
 											<li id="Dto" ><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
 											<li id="Per" ><a  class="cambio" href="?op=personal">PERSONAL</a></li>
-											<li id="Bja" ><a  class="cambio" href="?op=baja">BAJA PRESTAMO</a></li>
 
 									</ul>
 									 

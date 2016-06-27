@@ -1,5 +1,5 @@
 
-<h2>Consulta CPU</h2>
+<h2>Consulta Personal</h2>
 
 <form name="Validar_Get" id="formPerBus" method="POST" accept-charset="utf-8" class="navbar-form navbar-left" role="search">
 

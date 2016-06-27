@@ -28,27 +28,27 @@ $row = mysqli_fetch_array($resultado);
 
 				<br/><br/>
  				<label for="cedula">Cedula de identidad: </label>
-  				<input type="text" class="form-control"  id="Cedula" value="<?php    echo $row['cedula']  ?>" disabled>
+  				<input type="text" class="form-control"  id="Cedula" value="<?php    echo $row['cedula']  ?>" disabled><br/>
   				<input type="hidden" name="cedula" class="form-control" value="<?php    echo $row['cedula']  ?>" >
 
 
 				<label for="nombre">Nombre: </label>
-  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,30}" value="<?php    echo $row['nombre']  ?>"  required><br/>
+  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" value="<?php    echo $row['nombre']  ?>"  disabled><br/>
 
 
   				<label for="apellido">Apellido: </label>
-  				<input type="text" name="apellido" class="form-control" placeholder="Apellido" id="Apellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,30}" value="<?php    echo $row['apellido']  ?>"  required><br/>
+  				<input type="text" name="apellido" class="form-control" placeholder="Apellido" id="Apellido"  value="<?php    echo $row['apellido']  ?>"  disabled><br/>
 
 
   				<label for="telefono">Telefono: </label>
-  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{11}" value="<?php    echo $row['telefono']  ?>"  required>
+  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" value="<?php    echo $row['telefono']  ?>"  disabled><br/>
 				
 
 					
 
 
   				<label for="dpto">departamento: </label>
-  				<select id="dpto" name="departamento"  class="form-control" required>
+  				<select id="dpto" name="departamento"  class="form-control" disabled><br/>
   					<option value="" >Seleccionar</option>
   						<?php include("modificar-seleccionar-departamento.php"); ?>
 
@@ -62,7 +62,7 @@ $row = mysqli_fetch_array($resultado);
 			
 
 				
-			<input type="submit" id="BtnCpu" name="enviar_btn" value="Editar" class="btn btn-success">
+			<input type="submit" id="BtnCpu" name="enviar_btn" value="Eliminar" class="btn btn-warning">
 
 </form>
 
@@ -85,7 +85,7 @@ $("#formPerMod").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/personal/modificar-agregar-modificacion-personal.php",
+		url: "php/personal/baja-agregar-baja-personal.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

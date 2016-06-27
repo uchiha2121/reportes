@@ -5,7 +5,7 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM `personal` INNER JOIN depto_pers on personal.cedula = depto_pers.id_cedula INNER JOIN departamentos on depto_pers.id_depto = departamentos.cod_depto WHERE cedula= '$busqueda' ";
+			$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM `personal` INNER JOIN departamentos on personal.id_depto = departamentos.cod_depto WHERE cedula= '$busqueda' ";
 			$resultado = mysqli_query($conexion,$consulta);
 
 

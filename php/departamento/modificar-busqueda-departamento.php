@@ -6,7 +6,7 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM `personal` INNER JOIN  departamentos on personal.id_depto = departamentos.cod_depto WHERE cedula='$busqueda'";
+			$consulta = "SELECT * FROM departamentos WHERE cod_depto='$busqueda'";
 			$resultado = mysqli_query($conexion,$consulta);
 
 
@@ -27,37 +27,14 @@ $row = mysqli_fetch_array($resultado);
 
 
 				<br/><br/>
- 				<label for="cedula">Cedula de identidad: </label>
-  				<input type="text" class="form-control"  id="Cedula" value="<?php    echo $row['cedula']  ?>" disabled>
-  				<input type="hidden" name="cedula" class="form-control" value="<?php    echo $row['cedula']  ?>" >
+ 				<label for="cod">Codigo departamento: </label>
+  				<input type="text" class="form-control"  id="cod" value="<?php    echo $row['cod_depto']  ?>" disabled>
+  				<input type="hidden" name="cod" class="form-control" value="<?php    echo $row['cod_depto']  ?>" >
 
 
-				<label for="nombre">Nombre: </label>
-  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,30}" value="<?php    echo $row['nombre']  ?>"  required><br/>
+				<label for="nombre">Departamento: </label>
+  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,60}" value="<?php    echo $row['nombre_depto']  ?>"  required><br/>
 
-
-  				<label for="apellido">Apellido: </label>
-  				<input type="text" name="apellido" class="form-control" placeholder="Apellido" id="Apellido" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,30}" value="<?php    echo $row['apellido']  ?>"  required><br/>
-
-
-  				<label for="telefono">Telefono: </label>
-  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{11}" value="<?php    echo $row['telefono']  ?>"  required>
-				
-
-					
-
-
-  				<label for="dpto">departamento: </label>
-  				<select id="dpto" name="departamento"  class="form-control" required>
-  					<option value="" >Seleccionar</option>
-  						<?php include("modificar-seleccionar-departamento.php"); ?>
-
-  				</select>
-
-		
-
-		</div>
-				
 
 			
 
@@ -85,7 +62,7 @@ $("#formPerMod").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/personal/modificar-agregar-modificacion-personal.php",
+		url: "php/departamento/modificar-agregar-modificacion-departamento.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

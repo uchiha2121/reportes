@@ -2,34 +2,41 @@
 include ("/../../conexion/config.php");
 
 			$cedula			   = $_POST['cedula'];
+
+
+			$validar = "SELECT * FROM personal WHERE cedula= '$cedula' ";
+			$val = mysqli_query($conexion,$validar);
+
+
+
+if (mysqli_num_rows($val)>0) {
+
+die(
+
+
+'<div  class="alert alert-danger"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-remove" aria-hidden="true"></span><span class="sr-only">Success:</span></strong>El numero de cedula ya existe </div><script>$("#formPersonal")[0].reset();</script>'
+					);
+
+			
+
+
+
+
+	mysqli_free_result($val);
+
+}else{
+
 			$nombre			   = $_POST['nombre'];
 			$apellido		   = $_POST['apellido'];
-			$telefono1		   = $_POST['telefono'];
+			$telefono		   = $_POST['telefono'];
+			$departamento	   = $_POST['dpto'];
+
+$consulta = "INSERT personal VALUES ('".$cedula."','".$nombre."','".$apellido."','".$telefono."','".$departamento."')";
+
+			$resultado = mysqli_query($conexion,$consulta);
 
 
-			$consulta1 = "INSERT personal VALUES ('".$cedula."','".$nombre."','".$apellido."','".$telefono1."')";
-
-			$resultado1 = mysqli_query($conexion,$consulta1);
-
- 			//se agrega la talba departamentos-personal
-
-			$departamento	  = $_POST['dpto'];
-
-			$query = "SELECT cod_depto FROM departamentos WHERE nombre_depto = '$departamento' ";
-
-			$result =  mysqli_query($conexion, $query) ;
-
-					   mysqli_data_seek ($result, 0);
-			$extraido= mysqli_fetch_array($result);
-
-			$idDpto = $extraido['cod_depto'];
-
-			$consulta2 = "INSERT depto_pers VALUES (null,'".$cedula."','".$idDpto."')";
-
-			//mysqli_free_result($query);
-			$resultado2 = mysqli_query($conexion,$consulta2);
-
-if($resultado1 && $resultado2) {
+if($resultado) {
 					die(
 
 								'<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button>
@@ -39,9 +46,13 @@ if($resultado1 && $resultado2) {
 								<script>$("#formPersonal")[0].reset();</script>'
 					);
 
+}
+
+
 
 
 }
+
 
 
 

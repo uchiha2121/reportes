@@ -12,7 +12,7 @@ CREATE DATABASE IF NOT EXISTS `inventario_maquinas` DEFAULT CHARSET =utf8 COLLAT
 
 CREATE TABLE IF NOT EXISTS `departamentos` (
 
-		cod_depto int(3) UNSIGNED NOT NULL UNIQUE,
+		cod_depto varchar(4) NOT NULL UNIQUE,
 		nombre_depto varchar (60) NOT NULL UNIQUE,
 		PRIMARY KEY (cod_depto)
 
@@ -27,29 +27,12 @@ CREATE TABLE IF NOT EXISTS `personal` (
 		cedula int(8) UNSIGNED NOT NULL UNIQUE,
 		nombre varchar(30) NOT NULL,
 		apellido varchar(30) NOT NULL,
-		telefono bigint(11) NOT NULL,
-		PRIMARY KEY (cedula)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
-
-
-
-CREATE TABLE IF NOT EXISTS `depto_pers` (
-
-		cod_dept_p int(3) NOT NULL AUTO_INCREMENT,
-		id_cedula int(8) UNSIGNED NOT NULL UNIQUE,
-		id_depto int(3) UNSIGNED NOT NULL ,
-		PRIMARY KEY (cod_dept_p),
-		FOREIGN KEY (id_cedula) REFERENCES personal (cedula),
+		telefono varchar(11) NOT NULL,
+		id_depto varchar(4) NOT NULL ,
+		PRIMARY KEY (cedula),
 		FOREIGN KEY (id_depto) REFERENCES departamentos (cod_depto)
-		ON DELETE CASCADE
-
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
-
 
 
 
@@ -85,16 +68,19 @@ CREATE TABLE IF NOT EXISTS `cpu` (
 
 
 
+
 CREATE TABLE IF NOT EXISTS `caracteristica_cpu` (
 
 	 cod_carac int(5) NOT NULL AUTO_INCREMENT,
-	 c_nombre varchar(30) NOT NULL,
-	 especificacion varchar(50) NOT NULL,
+	 nombre_c varchar(50) NOT NULL,
+	 especificacion varchar(50) NOT NULL, 
 	 id_cpu varchar(30) NOT NULL,
 	 PRIMARY KEY (cod_carac),
      FOREIGN KEY (id_cpu) REFERENCES cpu (cod_cpu)
-
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+
+
 
 
 
@@ -111,17 +97,15 @@ CREATE TABLE IF NOT EXISTS `prestamo_cpu` (
 
 
 
-
-
 CREATE TABLE IF NOT EXISTS `hardware` (
 
 		 serial_h varchar(30) NOT NULL UNIQUE,
-		 h_nombre varchar(30) NOT NULL,
+		 nombre_h varchar(50) NOT NULL,
 		 especificacion varchar(50) NOT NULL,
 		 disponibilidad varchar(1) NOT NULL,
 		 estado varchar(1) NOT NULL,
-		PRIMARY KEY (serial_h)
 
+		PRIMARY KEY (serial_h)
 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 

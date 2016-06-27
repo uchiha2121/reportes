@@ -42,7 +42,7 @@ switch ($opi)
 					
 					<li><a 	class="cambio" href="?op=departamento&opi=alta_departamento">ALTA</a></li>
 					<li><a  class="cambio" href="?op=departamento&opi=consultas_departamento">CONSULTA</a></li>
-					<li><a  class="cambio" href="op=departamento&?opi=modificar_departamento">MODIFICAR</a></li>
+					<li><a  class="cambio" href="?op=departamento&opi=modificar_departamento">MODIFICAR</a></li>
 					<li><a 	class="cambio" href="?op=departamento&opi=baja_departamento">BAJA</a></li>
 			</ul>
 			 

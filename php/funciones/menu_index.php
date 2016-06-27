@@ -34,11 +34,6 @@ switch ($op)
 			$titulo= "Personal";
 			break;
 
-		case "baja":
-			$contenido= "php//home_baja.php";
-			$titulo= "Baja";
-			break;
-	
 	default:
 		$contenido= "home.php";
 		$titulo= "inicio";

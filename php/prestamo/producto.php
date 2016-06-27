@@ -2,13 +2,13 @@
 class ProductoMonitor{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='monitor' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='monitor' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -23,13 +23,13 @@ function getByid($id){
 class ProductoTeclado{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='teclado' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='teclado' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -45,13 +45,13 @@ function getByid($id){
 class ProductoMause{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='mouse' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='mouse' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -68,13 +68,13 @@ function getByid($id){
 class ProductoImpresora{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='impresora' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='impresora' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -90,13 +90,13 @@ function getByid($id){
 class ProductoRegulador{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='regulador' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='regulador' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -112,13 +112,13 @@ function getByid($id){
 class ProductoCornetas{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='cornetas' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='cornetas' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -134,13 +134,13 @@ function getByid($id){
 class ProductoCamaraWeb{
 
 function get(){
-		$sql = "SELECT * FROM hardware WHERE h_nombre='camara web' AND disponibilidad=0 AND estado=0";
+		$sql = "SELECT * FROM hardware WHERE nombre_h='camara web' AND disponibilidad=0 AND estado=0";
 		global $conexion;
 		return $conexion->query($sql);
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM hardware WHERE serial_h=$id";
+		$sql = "SELECT * FROM hardware WHERE serial_h='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 
@@ -162,7 +162,7 @@ function get(){
 }//get
 
 function getByid($id){
-		$sql = "SELECT * FROM cpu WHERE cod_cpu=$id";
+		$sql = "SELECT * FROM cpu WHERE cod_cpu='$id'";
 		global $conexion;
 		return $conexion->query($sql);
 

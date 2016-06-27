@@ -2,7 +2,7 @@
 include ("/../../conexion/config.php");
 
 
-$consulta = "SELECT * FROM departamentos ORDER BY nombre_depto";
+$consulta = "SELECT * FROM componentes_hrw ORDER BY nombre_h";
 
 
 $resultado = mysqli_query($conexion,$consulta); 
@@ -12,7 +12,7 @@ if ($resultado){
 
 
 		while ($row = mysqli_fetch_assoc($resultado)) {
-			echo "<option value ='" .$row["cod_depto"]."'>".$row["nombre_depto"]."</option>";
+			echo "<option value ='" .$row["cod_compo_h"]."'>".$row["nombre_h"]."</option>";
 		}
 
 

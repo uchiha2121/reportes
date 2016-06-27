@@ -16,6 +16,48 @@ function funcAjax (){
 
 
 	                                             //                        HARDWARE                             //   
+
+
+
+// FORMULARIO Agregar componente HARDWARE
+//Cuando el formulario con ID add se envíe...
+$("#formAltComp").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formAltComp"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/hardware/agregar-componente-hardware.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
+
+
+
 //FORMULARIO ALTA HARDWARE
 //Cuando el formulario con ID add se envíe...
 $("#formHrw").on("submit", function(e){
@@ -27,7 +69,7 @@ $("#formHrw").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/agregar-hardware.php",
+		url: "php/hardware/alta-agregar-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -90,7 +132,7 @@ $("#formConHrwT").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busquedaTotal-hardware.php",
+		url: "php/hardware/consulta-busqueda-Total-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -123,7 +165,7 @@ $("#formModHrw").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busqueda-modificar-hardware.php",
+		url: "php/hardware/modificar-busqueda-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -159,7 +201,7 @@ $("#formConHrwNP").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busquedaNoOperativo-hardware.php",
+		url: "php/hardware/consulta-busqueda-NoOperativo-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -194,7 +236,7 @@ $("#formConHrwD").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busquedaDisponibles-hardware.php",
+		url: "php/hardware/consulta-busqueda-Disponibles-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -229,7 +271,7 @@ $("#formConHrwND").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busquedaEnUso-hardware.php",
+		url: "php/hardware/consulta-busqueda-EnUso-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -266,7 +308,7 @@ $("#formConHrwBaja").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/busqueda-baja-hardware.php",
+		url: "php/hardware/baja-busqueda-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir
@@ -605,6 +647,108 @@ $("#formDpto").on("submit", function(e){
 
 
 
+// FORMULARIO consulta busqueda
+//Cuando el formulario con ID add se envíe...
+$("#formDepBT").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formDepBT"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/departamento/consulta-busqueda-Total-departamento.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+// FORMULARIO modificar busqueda
+//Cuando el formulario con ID add se envíe...
+$("#formModDep").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formModDep"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/departamento/modificar-busqueda-departamento.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+// FORMULARIO modificar busqueda
+//Cuando el formulario con ID add se envíe...
+$("#formBajDep").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formBajDep"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/departamento/baja-busqueda-departamento.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+
+
 
 
 
@@ -760,6 +904,39 @@ $("#formModPer").on("submit", function(e){
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
 		url: "php/personal/modificar-busqueda-personal.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+	}).done(function(echo){
+		//Cuando recibamos respuesta, la mostramos
+	
+		mensaje.html(echo);
+		mensaje.slideDown(500); });
+});
+
+
+
+// FORMULARIO CONSULTA TOTAL PERSONAL
+//Cuando el formulario con ID add se envíe...
+$("#formBajPer").on("submit", function(e){
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(document.getElementById("formBajPer"));
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/personal/baja-busqueda-personal.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

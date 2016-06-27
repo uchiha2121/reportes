@@ -3,13 +3,11 @@ include ("/../../conexion/config.php");
 
 
 
-			$cedula			   = $_POST['cedula'];
-			$nombre			   = $_POST['nombre'];
-			$apellido		   = $_POST['apellido'];
-			$telefono		   = $_POST['telefono'];
-			$departamento	   = $_POST['departamento'];
+			$cod		   			  = $_POST['cod'];
+			$departamento			  = $_POST['nombre'];
 
-$consulta = "UPDATE personal SET nombre='$nombre', apellido='$apellido', telefono='$telefono', id_depto='$departamento' WHERE cedula='$cedula'";
+
+$consulta = "UPDATE departamentos SET nombre_depto='$departamento' WHERE cod_depto='$cod'";
 
 $resultado = mysqli_query($conexion,$consulta);
 

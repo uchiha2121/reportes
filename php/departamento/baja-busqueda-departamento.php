@@ -6,70 +6,45 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' ";
-
-
+			$consulta = "SELECT * FROM departamentos WHERE cod_depto='$busqueda'";
 			$resultado = mysqli_query($conexion,$consulta);
 
-			mysqli_data_seek ($resultado, 0);
 
+
+
+
+if($resultado && mysqli_num_rows($resultado)>0) {
 $row = mysqli_fetch_array($resultado);
 
-
-if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 ?>	
- 	<form id="formEdHrw" class='form-horizontal formEdHrw' method="POST" accept-charset="utf-8" >
+
+
+<form name="Validar_Get" id="formPerMod" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
+	
+		<div class="form-group" >
+			
 
 
 
-<table class='table table-bordered'>
+				<br/><br/>
+ 				<label for="cod">Codigo departamento: </label>
+  				<input type="text" class="form-control"  id="cod" value="<?php    echo $row['cod_depto']  ?>" disabled>
+  				<input type="hidden" name="cod" class="form-control" value="<?php    echo $row['cod_depto']  ?>" >
 
 
-<tr>
-						<td>Serial Hardware</td>
-						<td>Nombre Accesorio</td>
-						<td>Descripcion</td>
-						<td>Estado</td>
-						
-				</tr>
-
-<tr>
-
-<td><input type='text' name='idhardware' class='form-control'  id='disabledTextInput' value='<?php  echo $row['serial_h']?>' disabled ></td>
-<input type='hidden' name='codHarw' value='<?php    echo $row['serial_h']  ?>' >
-
-<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value="<?php    echo $row['h_nombre'] ?>" disabled ></td>
+				<label for="nombre">Departamento: </label>
+  				<input type="text"  class="form-control" placeholder="Nombre" id="Nombre" value="<?php    echo $row['nombre_depto']  ?>"  disabled><br/>
 
 
-<td><input type='text' name='HDescrip' class='form-control' required   maxlength="50" minlength="10"  value='<?php    echo $row['especificacion']  ?>' ></td>
+			
 
-
-
-
-<td>
-							<select name='Estado' class="form-control" required>
-							
-							<option value="">Seleccion</option> 
-							<option value="0" <?php if($row['estado'] == '0'){echo 'selected';} ?> >Operativo</option>
-							<option value="1" <?php if($row['estado'] == '1'){echo 'selected';} ?> >No Operativo</option>  
-										   
-										   
-									 </select>
-						</td>
-</tr>
-
-
-
-
-</table>
-
-
-				 
- <p><input type='submit' id='BtnHrw' name='Btn' value='Modificar' class='btn btn-success'></p>
-
+				
+			<input type="submit" id="BtnCpu" name="enviar_btn" value="Eliminar" class="btn btn-warning">
 
 </form>
+
 <script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/crear.js"></script>
 
 <script>
 	
@@ -77,17 +52,17 @@ if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 
 	function funcAjaxx (){
 
-$(".formEdHrw").on("submit", function(e){
+$("#formPerMod").on("submit", function(e){
 	
 	//Evitamos que se envíe por defecto
 	e.preventDefault();
 	//Creamos un FormData con los datos del mismo formulario
-	var formData = new FormData(this);
+	var formData = new FormData(document.getElementById("formPerMod"));
 
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/agregar-modificacion-hardware.php",
+		url: "php/departamento/baja-agregar-baja-departamento.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

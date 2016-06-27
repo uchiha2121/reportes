@@ -87,7 +87,7 @@ $(".formEdHrw").on("submit", function(e){
 	//Llamamos a la función AJAX de jQuery
 	$.ajax({
 		//Definimos la URL del archivo al cual vamos a enviar los datos
-		url: "php/hardware/agregar-baja-hardware.php",
+		url: "php/hardware/baja-agregar-hardware.php",
 		//Definimos el tipo de método de envío
 		type: "POST",
 		//Definimos el tipo de datos que vamos a enviar y recibir

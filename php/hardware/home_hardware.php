@@ -4,10 +4,12 @@ $opi = isset($_GET['opi']) ? $_GET['opi'] : null;
 switch ($opi) 
 {
 	
+
+
 		case "alta_hardware":
 			$contenido2 = 'alta-hardware.php';
 			$titulo = 'Alta de hardware';
-			break;	
+			break;		
 
 		case "consultas_hardware":
 			$contenido2 = "consulta-hardware.php";
@@ -45,6 +47,7 @@ switch ($opi)
 	<nav class="col-xs- col-sm- col-xs-2 col-lg-2" > 
 			<ul class="nav nav-pills nav-stacked">
 					
+
 					<li><a 	class="cambio" href="?op=hardware&opi=alta_hardware">ALTA</a></li>
 					<li><a  class="cambio" href="?op=hardware&opi=consultas_hardware">CONSULTA</a></li>
 					<li><a  class="cambio" href="?op=hardware&opi=modificar_hardware">MODIFICAR</a></li>

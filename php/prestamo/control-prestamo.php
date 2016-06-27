@@ -24,7 +24,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -61,7 +61,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -101,7 +101,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -141,7 +141,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -182,7 +182,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -223,7 +223,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				
@@ -263,7 +263,7 @@ switch($page){
 				
 				$resultado_producto = $objProducto->getById($producto_id);
 				$producto = $resultado_producto->fetch_object();
-				$nombre = $producto->h_nombre;
+				$nombre = $producto->nombre_h;
 				$descripcion = $producto->especificacion;
 				
 				

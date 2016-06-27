@@ -1,4 +1,4 @@
-
+<h2>Alta personal</h2>
 <form name="Validar_Get" id="formPersonal" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
 	
 		<div class="form-group" >
@@ -20,7 +20,7 @@
 
 
   				<label for="telefono">Telefono: </label>
-  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{10,11}"  required>
+  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{11}"  required>
 				
 
 					

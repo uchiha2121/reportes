@@ -1,15 +1,15 @@
+
+
 <?php 
 include ("/../../conexion/config.php");
 
-			
-			$departamento = $_POST['dpto'];
 
 
-			$consulta = "SELECT * FROM `personal` INNER JOIN departamentos on personal.id_depto = departamentos.cod_depto WHERE cod_depto='$departamento'";
+		$consulta = "SELECT * FROM departamentos ORDER BY cod_depto";
 			$resultado = mysqli_query($conexion,$consulta);
 
 
-printf("<h1>Busqueda Por Departamento</h1>");
+printf("<h1>Busqueda Total</h1>");
 if($resultado  && mysqli_num_rows($resultado)>0) {
 	$n=1;
 
@@ -18,11 +18,9 @@ if($resultado  && mysqli_num_rows($resultado)>0) {
 	<table id='Tabla' class='table table-bordered'>
 				<tr class='tabla-principal'>
 						<td>Nro</td>
-						<td>Cedula</td>
-						<td>Nombre</td>
-						<td>Apellido</td>
-						<td>telefono</td>
-						<td>Departamento</td>
+						<td>codigo departamento</td>
+						<td>Nombre departamento</td>
+
 						
 				</tr>
 
@@ -40,15 +38,13 @@ while ($row = mysqli_fetch_array($resultado)) {
 						<td>%s</td>
 						<td>%s</td>
 						<td>%s</td>
-						<td>%s</td>
-						<td>%s</td>
-						<td>%s</td>
+
 
 
 						</tr>
 
 
-						",$n,$row['cedula'],$row['nombre'],$row['apellido'],$row['telefono'],$row['nombre_depto']);
+						",$n,$row['cod_depto'],$row['nombre_depto']);
 $n++;
 }
 
