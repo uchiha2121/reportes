@@ -16,7 +16,7 @@ if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 
 	printf("				
 	<table id='TablaAgregadora2' class='table table-bordered'>
-				<tr>
+				<tr class='tabla-principal'>
 						<td>Nro</td>
 						<td>Serial Hardware</td>
 						<td>Nombre Accesorio</td>
@@ -38,7 +38,7 @@ while ($row = mysqli_fetch_array($resultado)) {
 						</tr>
 
 
-						",$n,$row['serial_h'],$row['h_nombre'],$row['especificacion']);
+						",$n,$row['serial_h'],$row['nombre_h'],$row['especificacion']);
 
 
 			

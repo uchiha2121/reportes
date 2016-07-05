@@ -38,10 +38,13 @@ $resultado_case = $objCase->get();
  ?>
 
 
-
  <div class="page-header">
-			<h1>Prestamo equipo</h1>
+
+															<h1>Prestamo equipo</h1>
 		</div>
+
+
+<form id="ree">
 
 
 <div class="row">
@@ -204,6 +207,7 @@ $resultado_case = $objCase->get();
 
 
 </div></br>
+</form>
 
 
 
@@ -297,6 +301,6 @@ $resultado_case = $objCase->get();
 
 </form>
 
-
-
-	<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
+<div id="mensaje"  class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
+	<a name="ancla"></a>
+	

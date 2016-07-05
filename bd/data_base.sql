@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `personal` (
 CREATE TABLE IF NOT EXISTS `prestamo_equipo` (
 
 		n_prestamo int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
-		cedula int(8) UNSIGNED NOT NULL UNIQUE,
+		cedula int(8) UNSIGNED NOT NULL,
 		fecha_inicio date NOT NULL,
 		fecha_fin date NULL,
 		estado varchar(1) NOT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `hardware` (
 
 CREATE TABLE IF NOT EXISTS `prestamo_hrw` (
 
-	 cod_pres_h int(4) NOT NULL,
+	 cod_pres_h int(4) NOT NULL AUTO_INCREMENT,
 	 id_prestamo int(4) UNSIGNED NOT NULL,
 	 id_serial_h varchar(30) NOT NULL UNIQUE,
 	 PRIMARY KEY (cod_pres_h),

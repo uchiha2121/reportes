@@ -29,6 +29,7 @@ switch ($opi)
 			$contenido2 = "baja-prestamo.php";
 			$titulo = "Baja de prestamo";
 			break;
+			
 	default:
 		$contenido2 = "/php/prestamo/home.php";
 		$titulo = "prestamo";

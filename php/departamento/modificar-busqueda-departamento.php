@@ -33,7 +33,7 @@ $row = mysqli_fetch_array($resultado);
 
 
 				<label for="nombre">Departamento: </label>
-  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" pattern="[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{3,60}" value="<?php    echo $row['nombre_depto']  ?>"  required><br/>
+  				<input type="text" name="nombre" class="form-control" placeholder="Nombre" id="Nombre" pattern="[a-z]{3,60}" value="<?php    echo $row['nombre_depto']  ?>"  required><br/>
 
 
 			

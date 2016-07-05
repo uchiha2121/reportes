@@ -1,4 +1,4 @@
-h1, h2 {
+h1, h2, h3 {
 
 text-align: center;
 }
@@ -24,4 +24,22 @@ button.btn-warning{
 
 	background-color: #40ACFF;
 	color: white;
+}
+
+
+.jumbotron {
+
+
+border-radius: 72px 72px 72px 72px;
+-moz-border-radius: 72px 72px 72px 72px;
+-webkit-border-radius: 72px 72px 72px 72px;
+border: 1px solid #000000;
+
+}
+
+
+.blanco{
+
+
+	background-color: #FFFFFF;
 }

@@ -95,15 +95,15 @@ while ($row2 = mysqli_fetch_array($resultado2)) {?>
 					<td>
 						<select name="componentes[]" class="form-control" disabled >
 									 <option value="">Seleccion</option> 
-									 <option value="disco duro" <?php if($row2['c_nombre'] == 'disco duro'){echo 'selected';} ?> >Disco duro</option>
-									 <option value="fuente de poder" <?php if($row2['c_nombre'] == 'fuente de poder'){echo 'selected';} ?> >Fuente de poder</option>  
-									 <option value="memoria ram" <?php if($row2['c_nombre'] == 'memoria ram'){echo 'selected';} ?> >memoria RAM</option>
-									 <option value="procesador" <?php if($row2['c_nombre'] == 'procesador'){echo 'selected';} ?> >Procesador</option> 
-									 <option value="tarjeta madre" <?php if($row2['c_nombre'] == 'tarjeta madre'){echo 'selected';} ?> >Tarjeta madre</option> 
-									 <option value="tarjeta de video" <?php if($row2['c_nombre'] == 'tarjeta de video'){echo 'selected';} ?> >tarjeta de video</option> 
-									 <option value="tarjeta de red" <?php if($row2['c_nombre'] == 'tarjeta de red'){echo 'selected';} ?> >Tarjeta de red</option> 
-									 <option value="tarjeta usb" <?php if($row2['c_nombre'] == 'tarjeta usb'){echo 'selected';} ?> >Tarjeta USB</option>
-									 <option value="unidad de cd" <?php if($row2['c_nombre'] == 'unidad de cd'){echo 'selected';} ?> >Unidad de CD/DVD</option>
+									 <option value="disco duro" <?php if($row2['nombre_c'] == 'disco duro'){echo 'selected';} ?> >Disco duro</option>
+									 <option value="fuente de poder" <?php if($row2['nombre_c'] == 'fuente de poder'){echo 'selected';} ?> >Fuente de poder</option>  
+									 <option value="memoria ram" <?php if($row2['nombre_c'] == 'memoria ram'){echo 'selected';} ?> >memoria RAM</option>
+									 <option value="procesador" <?php if($row2['nombre_c'] == 'procesador'){echo 'selected';} ?> >Procesador</option> 
+									 <option value="tarjeta madre" <?php if($row2['nombre_c'] == 'tarjeta madre'){echo 'selected';} ?> >Tarjeta madre</option> 
+									 <option value="tarjeta de video" <?php if($row2['nombre_c'] == 'tarjeta de video'){echo 'selected';} ?> >tarjeta de video</option> 
+									 <option value="tarjeta de red" <?php if($row2['nombre_c'] == 'tarjeta de red'){echo 'selected';} ?> >Tarjeta de red</option> 
+									 <option value="tarjeta usb" <?php if($row2['nombre_c'] == 'tarjeta usb'){echo 'selected';} ?> >Tarjeta USB</option>
+									 <option value="unidad de cd" <?php if($row2['nombre_c'] == 'unidad de cd'){echo 'selected';} ?> >Unidad de CD/DVD</option>
 									   
 								 </select>
 

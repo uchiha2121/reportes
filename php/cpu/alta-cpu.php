@@ -1,17 +1,16 @@
-
+<a name="ancla"></a>
+<h2>Alta Cpu</h2>
+<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
 <form name="Validar_Get" id="formCpu" class="form-horizontal" method="POST" accept-charset="utf-8">
 	
 		<div class="form-group" >
 			
 
-
-
-
  				<label for="code" class="codPresCpu">Codigo Case: </label>
-  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="code" maxlength="30" minlength="5" required >
+  				<input type="text" name="codPresCpu" class="form-control" placeholder="Codigo Case" id="code" maxlength="30" minlength="5" autocomplete="off" required >
 
   				<label for="proce" class="ProCpu">Procedencia del equipo: </label>
-  				<input type="text" id="proce" name="ProCpu" class="form-control" placeholder="¿De donde proviene el equipo?" maxlength="30" minlength="3" required >
+  				<input type="text" id="proce" name="ProCpu" class="form-control" placeholder="¿De donde proviene el equipo?" maxlength="30" minlength="3" autocomplete="off" required >
 
 
 				<label for="SistemaO" class="control-label">Sistema Operativo: </label>
@@ -80,7 +79,7 @@
 
 					</td>
 
-					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion" required ></td>
+					<td><input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" id="descripcion" autocomplete="off" required ></td>
 					<td></td>
 
 
@@ -95,7 +94,7 @@
 				<p><input type="submit" id="BtnCpu" name="enviar_btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
+
 
 
 

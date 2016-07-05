@@ -38,7 +38,7 @@ if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
 <td><input type='text' name='idhardware' class='form-control'  id='disabledTextInput' value='<?php  echo $row['serial_h']?>' disabled></td>
 <input type='hidden' name='codHarw' value='<?php    echo $row['serial_h']  ?>' >
 
-<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value="<?php    echo $row['h_nombre'] ?>" disabled></td>
+<td><input type='text' name='Ncomponente' class='form-control' id='disabledTextInput' value="<?php    echo $row['nombre_h'] ?>" disabled></td>
 
 
 <td><input type='text' name='HDescrip' class='form-control'  value='<?php    echo $row['especificacion']  ?>' disabled></td>

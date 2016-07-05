@@ -1,3 +1,6 @@
+
+<h2>Alta Hardware</h2>
+<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
 <form name="Validar_Get" id="formHrw" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
 	
 	
@@ -34,7 +37,7 @@
 
 						</td>
 
-						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="10" required></td>
+						<td>	<input type="text" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="3" required></td>
 						<td>	<input type="text" name="codPresHwr[]" class="form-control" placeholder="Serial Hardware"  maxlength="30" minlength="5" required></td>
 						<td><select name="estado[]" class="form-control" required="">
 										   <option value="">Seleccion</option> 
@@ -57,7 +60,7 @@
 				<p><input type="submit" id="BtnHrw" name="Btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
+
 
 
 

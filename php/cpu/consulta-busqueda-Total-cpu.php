@@ -8,12 +8,13 @@ include ("/../../conexion/config.php");
 
 
 
-printf("<h1>Todos</h1>");
+printf("<h1>Busqueda Todal</h1>");
 if($resultado && mysqli_num_rows($resultado)>0) {
 
 
 for ($i=0; $i<$numero = mysqli_num_rows($resultado);$i++){
-
+print("<div class='jumbotron'>");
+print("<div class='blanco'>");
 printf("<h2>Registro N° %s</h2>",$i+1);
 $row = mysqli_fetch_array($resultado);
 
@@ -82,7 +83,7 @@ while ($row2 = mysqli_fetch_array($resultado2)) {
 						</tr>
 
 
-						",$row2['c_nombre'],$row2['especificacion']);
+						",$row2['nombre_c'],$row2['especificacion']);
 
 
 			
@@ -101,7 +102,8 @@ printf("</table>");
 
 
 
-
+printf("</div>");
+printf("</div>");
 }
 
 

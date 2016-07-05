@@ -190,7 +190,7 @@ function funcNuevaAgregarC(){
 
 									$('<td>')
 										.append(
-												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="10" type="text" required >')
+												$('<input id="searchBox" name="descripcion[]" class="form-control" placeholder="Descripcion" maxlength="50" minlength="3" type="text" required >')
 												
 											   )
 									   )//td

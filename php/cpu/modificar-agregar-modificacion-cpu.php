@@ -2,18 +2,34 @@
 include ("/../../conexion/config.php");
 
 
-			$cedula	        = $_POST['cedula'];
-			$nombre         = $_POST['nombre'];
-			$apellido       = $_POST['apellido'];
-			$telefono       = $_POST['telefono'];
-			$departamento   = $_POST['departamento'];
+			$code 			   = $_POST['codPresCpu'];
+			$sysm			   = $_POST['SistemaO'];
+			$proc			   = $_POST['ProCpu'];
+			$estado			   = $_POST['estado'];
+			$array_componentes = $_POST['componentes'];
+			$array_descripcion = $_POST['descripcion'];
+
+ 			
+			$modificar = "UPDATE cpu SET SO='$sysm', procedencia='$proc', estado='$estado' WHERE cod_cpu='$code' ";
+			$modificacion = mysqli_query($conexion,$modificar);
+
+ 			$borrado= "DELETE FROM caracteristica_cpu WHERE id_cpu='$code'";
+			$borrar = mysqli_query($conexion,$borrado);
 
 
-$consulta = "UPDATE `personal` INNER JOIN depto_pers on personal.cedula = depto_pers.id_cedula SET nombre='$nombre', apellido='$apellido', telefono='$telefono', id_depto='$departamento'  WHERE cedula='$cedula'";
-			$resultado = mysqli_query($conexion,$consulta);
+
+			foreach ($array_componentes as $key =>$componentes) {
+				
+				$descripcion = $array_descripcion[$key];
+				
+				$consulta = " INSERT INTO caracteristica_cpu VALUES (null,'".$componentes."','".$descripcion."','".$code."')";
+				$resultado = mysqli_query($conexion, $consulta);
+
+			} 
+					
 
 
-if($resultado) {
+if($resultado && $borrar) {
 					die(
 
 '<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><span class="sr-only">Success:</span></strong> Su modificacion fue <strong>EXITOSA!</strong></div>'

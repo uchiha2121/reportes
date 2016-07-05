@@ -1,4 +1,5 @@
 <h2>Alta personal</h2>
+<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
 <form name="Validar_Get" id="formPersonal" class="form-horizontal" method="POST" action="" accept-charset="utf-8">
 	
 		<div class="form-group" >
@@ -20,7 +21,7 @@
 
 
   				<label for="telefono">Telefono: </label>
-  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{11}"  required>
+  				<input type="text" name="telefono" class="form-control" placeholder="04261234567" id="Tel" pattern="[0-9]{11}"  required><br/>
 				
 
 					
@@ -46,7 +47,7 @@
 				<br/><p><input type="submit" id="BtnCpu" name="enviar_btn" value="Enviar" class="btn btn-success"></p>
 
 </form>
-<div id="mensaje" class="col-xs-12 col-sm-12 col-xs-12 col-lg-12"></div>
+
 	
 
 

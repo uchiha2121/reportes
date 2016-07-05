@@ -17,7 +17,8 @@ printf("<h1>Busqueda Avanzada</h1>");
 if($resultado  && mysqli_num_rows($resultado)>0) {
 	
 $row = mysqli_fetch_array($resultado);
-
+print("<div class='jumbotron'>");
+print("<div class='blanco'>");
 	printf("				
 	<table id='Tabla' class='table table-bordered'>
 				<tr class='tabla-principal'>
@@ -78,7 +79,7 @@ while ($row2 = mysqli_fetch_array($resultado2)) {
 						</tr>
 
 
-						",$row2['c_nombre'],$row2['especificacion']);
+						",$row2['nombre_c'],$row2['especificacion']);
 
 
 			
@@ -92,7 +93,8 @@ while ($row2 = mysqli_fetch_array($resultado2)) {
 
 printf("</table>");
 
-
+printf("</div>");
+printf("</div>");
 die(
 
 '<div class="alert alert-success"><button class="close" data-dismiss="alert" ><span>&times;</span></button><strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span><span class="sr-only">Success:</span></strong> Registro encontrado con <strong>EXITO!</strong></div>'

@@ -3,11 +3,12 @@ include ("/../../conexion/config.php");
 
 
 
-		$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM `personal` INNER JOIN departamentos on personal.id_depto = departamentos.cod_depto";
+
+			$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM `personal` INNER JOIN depto_pers on personal.cedula = depto_pers.id_cedula INNER JOIN departamentos on depto_pers.id_depto = departamentos.cod_depto";
 			$resultado = mysqli_query($conexion,$consulta);
 
 
-printf("<h1>Busqueda Total</h1>");
+printf("<h1>Busqueda Avanzada</h1>");
 if($resultado  && mysqli_num_rows($resultado)>0) {
 	$n=1;
 
@@ -81,3 +82,4 @@ else {
 
 mysqli_close($conexion);
  ?>
+

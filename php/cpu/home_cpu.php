@@ -40,7 +40,7 @@ switch ($opi)
 	
 
 	<nav class="col-xs- col-sm- col-xs-2 col-lg-2" > 
-			<ul class="text-center nav nav-pills nav-stacked ">
+			<ul class="nav nav-pills nav-stacked">
 					
 					<li ><a 	class="cambio" href="?op=cpu&opi=alta_cpu">ALTA</a></li>
 					<li ><a     class="cambio" href="?op=cpu&opi=consultas_cpu">CONSULTA</a></li>
