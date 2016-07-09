@@ -3,8 +3,6 @@ include ("/../../conexion/config.php");
 
 
 			$consulta = "SELECT * FROM hardware";
-
-
 			$resultado = mysqli_query($conexion,$consulta);
 
 			mysqli_data_seek ($resultado, 0);
@@ -51,6 +49,27 @@ while ($row = mysqli_fetch_array($resultado)) {
 
 
 printf("</table>");
+
+
+?>
+
+
+<form method="POST" accept-charset="utf-8" action="php/hardware/vistas_pdf/reporte-hardware-total.php" class="navbar-form navbar-left"  target="_blank" >
+
+
+								<button type="submit" class="btn btn-info" >Reporte en PDF</button>
+
+					
+</form>
+
+</br>
+</br>
+</br>
+</br>
+
+	
+
+<?php
 
 
 die(

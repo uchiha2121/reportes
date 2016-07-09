@@ -5,12 +5,12 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM `personal` INNER JOIN departamentos on personal.id_depto = departamentos.cod_depto WHERE cedula= '$busqueda' ";
+			$consulta = "SELECT personal.cedula, personal.nombre, personal.apellido, personal.telefono, departamentos.nombre_depto FROM personal INNER JOIN departamentos on personal.id_depto = departamentos.cod_depto WHERE cedula= '$busqueda' ";
 			$resultado = mysqli_query($conexion,$consulta);
 
 
 printf("<h1>Busqueda Avanzada</h1>");
-if($resultado  && mysqli_num_rows($resultado)>0) {
+if(mysqli_num_rows($resultado)>0) {
 	
 $row = mysqli_fetch_array($resultado);
 
@@ -49,10 +49,6 @@ $row = mysqli_fetch_array($resultado);
 
 
 printf("</table>");
-
-
-	
-
 
 die(
 

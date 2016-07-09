@@ -614,6 +614,46 @@ $("#formCpuBaja").on("submit", function(e){
 
 
 
+
+
+
+// FORMULARIO reporte CPU
+//Cuando el formulario con ID add se envíe...
+// $("#formCpuRepBus").on("submit", function(e){
+// 	//Evitamos que se envíe por defecto
+// 	e.preventDefault();
+// 	//Creamos un FormData con los datos del mismo formulario
+// 	var formData = new FormData(document.getElementById("formCpuRepBus"));
+
+// 	//Llamamos a la función AJAX de jQuery
+// 	$.ajax({
+// 		//Definimos la URL del archivo al cual vamos a enviar los datos
+// 		url: "php/cpu/reporte-cpu-total.php",
+// 		//Definimos el tipo de método de envío
+// 		type: "POST",
+// 		//Definimos el tipo de datos que vamos a enviar y recibir
+// 		dataType: "HTML",
+// 		//Definimos la información que vamos a enviar
+// 		data: formData,
+// 		//Deshabilitamos el caché
+// 		cache: false,
+// 		//No especificamos el contentType
+// 		contentType: false,
+// 		//No permitimos que los datos pasen como un objeto
+// 		processData: false
+// 	}).done(function(html){
+// 		//Cuando recibamos respuesta, la mostramos
+// 	 window.location.href = 'php/cpu/reporte-cpu-total.php'; });
+// });
+
+
+
+
+
+
+
+
+
 																//      departamento     //
 // FORMULARIO ALTA DEPARTAMENTO
 //Cuando el formulario con ID add se envíe...

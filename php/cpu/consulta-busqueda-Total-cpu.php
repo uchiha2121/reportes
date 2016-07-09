@@ -106,7 +106,25 @@ printf("</div>");
 printf("</div>");
 }
 
+?>
 
+
+<form method="POST" accept-charset="utf-8" action="php/cpu/vistas_pdf/reporte-cpu-total.php" class="navbar-form navbar-left"  target="_blank" >
+
+
+								<button type="submit" class="btn btn-info" >Reporte en PDF</button>
+
+					
+</form>
+
+</br>
+</br>
+</br>
+</br>
+
+	
+
+<?php
 			 
  
 die(

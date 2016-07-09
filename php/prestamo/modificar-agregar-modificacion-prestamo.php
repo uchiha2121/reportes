@@ -92,6 +92,8 @@ foreach ($Array_serialDelete_cpu as $key1 => $serialDelete_cpu) {
 
 
 										echo "modifique cpu";
+
+							            $vandera++;
 										echo "vandera= $vandera";
 
 
@@ -99,7 +101,6 @@ foreach ($Array_serialDelete_cpu as $key1 => $serialDelete_cpu) {
 
 
 
-							$vandera++;
 					}	 
 			}
 

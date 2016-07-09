@@ -37,7 +37,7 @@ switch ($opi)
 
 	
 
-	<nav class="col-xs- col-sm- col-xs-2 col-lg-2" > 
+	<nav class="col-xs- col-sm- col-xs-2 col-lg-2 sub-menu" > 
 			<ul class="nav nav-pills nav-stacked">
 					
 					<li><a 	class="cambio" href="?op=personal&opi=alta_personal">ALTA</a></li>
