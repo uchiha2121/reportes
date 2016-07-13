@@ -39,8 +39,9 @@ include ("/php/funciones/menu_index.php");
 											<li id="Epo" ><a  class="cambio" href="?op=prestamo">PRESTAMO EQUIPO</a></li>
 											<li id="Cpu" ><a  class="cambio" href="?op=cpu">CPU</a></li>
 											<li id="Hrw" ><a  class="cambio" href="?op=hardware">HARDWARE</a></li>
-											<li id="Dto" ><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
 											<li id="Per" ><a  class="cambio" href="?op=personal">PERSONAL</a></li>
+											<li id="Dto" ><a  class="cambio" href="?op=departamento">DEPARTAMENTO</a></li>
+											
 
 									</ul>
 									 

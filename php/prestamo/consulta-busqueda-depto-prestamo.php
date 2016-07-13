@@ -2,11 +2,11 @@
 
 include ("/../../conexion/config.php");
 
-		$busqueda = $_POST['Cedula_b'];
+		$busqueda = $_POST['dpto'];
 
 
 
-		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE personal.cedula=$busqueda";
+		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE personal.id_depto=$busqueda";
 		$resultado1 = mysqli_query($conexion,$consulta1);
 
 
@@ -234,7 +234,7 @@ printf("</div>");
 ?>
 
 
-<form method="POST" accept-charset="utf-8" action="php/prestamo/vistas_pdf/reporte-prestamo-cedula-total.php" class="navbar-form navbar-left"  target="_blank" >
+<form method="POST" accept-charset="utf-8" action="php/prestamo/vistas_pdf/reporte-prestamo-depto.php" class="navbar-form navbar-left"  target="_blank" >
 
 
 					<input type="hidden" name="busqueda" value="<?php echo $busqueda?>" >

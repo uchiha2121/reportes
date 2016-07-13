@@ -35,14 +35,14 @@
 </form>
 <div class="col-xs-12 col-sm-12 col-xs-12 col-lg-12">
 
-<form name="Validar_Get" id="formPerBdep" method="POST"  accept-charset="utf-8" class="navbar-form navbar-left" role="search">
+<form  id="formPerBdep" method="POST"  accept-charset="utf-8" class="navbar-form navbar-left" role="search">
 
 
 			<div class="form-group">
 			<label for="busqueda">Busqueda por departamento</label>
 					  <select id="departamento" name="dpto"  class="form-control" required>
   					<option value="" >Seleccionar</option>
-  						<?php include("seleccionar-departamento.php"); ?>
+  						<?php include("/../funciones/seleccionar-departamento.php"); ?>
 
   				</select>
 					  <button name="busqueda" type="" class="btn btn-primary">Buscar</button>

@@ -16,7 +16,7 @@
 
 
 				<label for="code" class="nombreDpto">Nombre Del Departamento: </label>
-  				<input type="text" name="nombreDpto" class="form-control" placeholder="Nombre del departamento" pattern="[a-z]{3,60}" required><br/>
+  				<input type="text" name="nombreDpto" class="form-control" placeholder="Nombre del departamento" pattern="[a-z\s]{3,60}" required><br/>
 			
 
 
