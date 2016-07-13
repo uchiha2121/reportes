@@ -142,10 +142,10 @@ if (mysqli_num_rows($validarcion_cpu)>0) {
 			$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE id_prestamo='$id'";
 			$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
 
+
+while ($row_cpu = mysqli_fetch_array($resultado_cpu)){ 
+
 printf("<h3>Cpu</h3>");
-$row_cpu = mysqli_fetch_array($resultado_cpu);
-
-
 
 
 
@@ -217,7 +217,7 @@ while ($row_comp = mysqli_fetch_array($resultado_Tcpu)) {
 
 printf("</table>");
 
-
+}
 
 
 

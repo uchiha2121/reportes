@@ -1,17 +1,14 @@
-
 <?php 
+
 include ("/../../conexion/config.php");
 
-
-			$busqueda = $_POST['busqueda'];
-
+		$busqueda = $_POST['Cedula_b'];
 
 
-
-		$consulta = "SELECT * FROM prestamo_equipo WHERE n_prestamo='$busqueda'";
+		$consulta = "SELECT * FROM prestamo_equipo WHERE cedula=$busqueda";
 		$resultado = mysqli_query($conexion,$consulta);
 
-		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE n_prestamo='$busqueda'";
+		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE personal.cedula=$busqueda";
 		$resultado1 = mysqli_query($conexion,$consulta1);
 
 
@@ -19,12 +16,16 @@ printf("<h1>Busqueda Avanzada</h1> </br>");
 if(mysqli_num_rows($resultado)>0) {
 	
 
-print("<div class='jumbotron'>");
-print("<div class='blanco'>");
+
+for ($i=0; $i<$numero = mysqli_num_rows($resultado1);$i++){
+	$n=$i+1;
+printf("<h1>Registro N°- $n</h1> </br>");
 $row = mysqli_fetch_array($resultado1);
 
 $id=$row['n_prestamo'];
 
+print("<div class='jumbotron'>");
+print("<div class='blanco'>");
 	printf("				
 	<table id='Tabla' class='table table-bordered'>
 				<tr class='tabla-principal'>
@@ -229,10 +230,30 @@ printf("</table>");
 
 printf("</div>");
 printf("</div>");
+}//for
 
 
+?>
 
 
+<form method="POST" accept-charset="utf-8" action="php/prestamo/vistas_pdf/reporte-prestamo-cedula-total.php" class="navbar-form navbar-left"  target="_blank" >
+
+
+					<input type="hidden" name="busqueda" value="<?php echo $busqueda?>" >
+
+								<button type="submit" class="btn btn-info" >Reporte en PDF</button>
+
+					
+</form>
+
+</br>
+</br>
+</br>
+</br>
+
+	
+
+<?php
 
 
 

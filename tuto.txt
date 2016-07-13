@@ -1,6 +1,0 @@
-https://mimentevuela.wordpress.com/2016/02/16/generar-sql-desde-arrays-de-inputs-html5/comment-page-1/#comment-191
-
-http://aprenderaprogramar.com/index.php?option=com_content&view=article&id=612:php-consultas-mysql-mysqliconnect-selectdb-query-fetcharray-freeresult-close-ejemplos-cu00841b&catid=70:tutorial-basico-programador-web-php-desde-cero&Itemid=193
-
-
-http://tutorialphp.net/bases-de-datos-mysql-en-php-5/consultas-a-la-base-de-datos-mysql-en-php-5/

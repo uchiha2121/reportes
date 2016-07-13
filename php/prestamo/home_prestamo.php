@@ -19,16 +19,11 @@ switch ($opi)
 			$titulo = "modificar prestamo";
 			break;
 
-        case "reporte_prestamo":
-			$contenido2 = "reporte-prestamo.php";
-			$titulo = "reporte prestamo";
-			break;
-
-
-	    case "baja_prestamo":
+        case "baja_prestamo":
 			$contenido2 = "baja-prestamo.php";
-			$titulo = "Baja de prestamo";
+			$titulo = "baja prestamo";
 			break;
+
 			
 	default:
 		$contenido2 = "/php/prestamo/home.php";
@@ -49,7 +44,6 @@ switch ($opi)
 					<li><a 	class="cambio" href="?op=prestamo&opi=alta_prestamo">ALTA</a></li>
 					<li><a  class="cambio" href="?op=prestamo&opi=consultas_prestamo">CONSULTA</a></li>
 					<li><a  class="cambio" href="?op=prestamo&opi=modificar_prestamo">MODIFICAR</a></li>
-					<li><a 	class="cambio" href="?op=prestamo&opi=reporte_prestamo">REPORTE</a></li>
 					<li><a 	class="cambio" href="?op=prestamo&opi=baja_prestamo">BAJA</a></li>
 			</ul>
 			 

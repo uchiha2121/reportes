@@ -16,11 +16,12 @@ if(mysqli_num_rows($resultado)>0) {
 
 
 
-for ($i=0; $i<$numero = mysqli_num_rows($resultado);$i++){
+for ($i=0; $i<$numero = mysqli_num_rows($resultado1);$i++){
 
 print("<div class='jumbotron'>");
 print("<div class='blanco'>");
 printf("<h3>Registro N° %s</h3>",$i+1);
+
 $row = mysqli_fetch_array($resultado1);
 
 $id=$row['n_prestamo'];
@@ -88,8 +89,8 @@ printf("<h3>Componentes hardware</h3>");
 
 ");
 
-			$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$id'";
-			$resultado_h = mysqli_query($conexion,$consulta_h);
+	$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$id'";
+		$resultado_h = mysqli_query($conexion,$consulta_h);
 
 while ($row_h = mysqli_fetch_array($resultado_h)) {
 						
@@ -142,9 +143,9 @@ if (mysqli_num_rows($validarcion_cpu)>0) {
 			$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE id_prestamo='$id'";
 			$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
 
-printf("<h3>Cpu</h3>");
-$row_cpu = mysqli_fetch_array($resultado_cpu);
 
+while ($row_cpu = mysqli_fetch_array($resultado_cpu)){ 
+printf("<h3>Cpu</h3>");
 
 
 
@@ -174,6 +175,11 @@ $row_cpu = mysqli_fetch_array($resultado_cpu);
 						",$row_cpu['cod_cpu'],$row_cpu['SO'],$row_cpu['procedencia']);
 
 	printf("</table>");
+
+
+
+
+
 
 	$consulta_Tcpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu INNER JOIN caracteristica_cpu ON cpu.cod_cpu=caracteristica_cpu.id_cpu 	WHERE id_prestamo='$id'";
 
@@ -217,7 +223,7 @@ while ($row_comp = mysqli_fetch_array($resultado_Tcpu)) {
 
 printf("</table>");
 
-
+}
 
 
 
@@ -231,7 +237,25 @@ printf("</div>");
 }//for
 
 
+?>
 
+
+<form method="POST" accept-charset="utf-8" action="php/prestamo/vistas_pdf/reporte-prestamo-total.php" class="navbar-form navbar-left"  target="_blank" >
+
+
+								<button type="submit" class="btn btn-info" >Reporte en PDF</button>
+
+					
+</form>
+
+</br>
+</br>
+</br>
+</br>
+
+	
+
+<?php
 
 
 

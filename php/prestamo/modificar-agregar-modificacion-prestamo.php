@@ -1,14 +1,15 @@
-<?php 
+<?php
+error_reporting(E_ERROR | E_WARNING | E_PARSE); 
 include ("/../../conexion/config.php");
 
 
 			$n_prestamo	           = $_POST['nPrestamo'];
 
-			$Array_serialDelete_h 	   = isset($_POST['serial_hDelete']) ? $_POST['serial_hDelete']: null;
-			$Array_serialOn_h 	       = isset($_POST['serial_hOn']) ? $_POST['serial_hOn']: null;
+			$Array_serialDelete_h 	   = isset($_POST['serial_hDelete']) ? $_POST['serial_hDelete']: NULL;
+			$Array_serialOn_h 	       = isset($_POST['serial_hOn']) ? $_POST['serial_hOn']: NULL;
 
-			$Array_serialDelete_cpu      = isset($_POST['serial_cpuDelete']) ? $_POST['serial_cpuDelete']: null;
-			$Array_serialOn_cpu          = isset($_POST['serial_cpuOn']) ? $_POST['serial_cpuOn']: null;
+			$Array_serialDelete_cpu      = isset($_POST['serial_cpuDelete']) ? $_POST['serial_cpuDelete']: NULL;
+			$Array_serialOn_cpu          = isset($_POST['serial_cpuOn']) ? $_POST['serial_cpuOn']: NULL;
 
 			$vandera=0;
 
@@ -17,7 +18,7 @@ include ("/../../conexion/config.php");
 
 
 
-if ($Array_serialOn_h==null && $Array_serialOn_cpu==null) {
+if ($Array_serialOn_h==NULL && $Array_serialOn_cpu==NULL) {
 
 
 		die (
@@ -35,28 +36,30 @@ if ($Array_serialOn_h==null && $Array_serialOn_cpu==null) {
 
 
 
-
+if ($Array_serialDelete_h) {
 
 	foreach ($Array_serialDelete_h as $key => $serialDelete_h) {
 				$serialOn_h	=	$Array_serialOn_h[$key];
 
-				if ($serialOn_h==null) { //harwdare
+				if ($serialOn_h==NULL) { //harwdare
 									
-					$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$serialDelete_h'";
+					$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE serial_h='$serialDelete_h'";
 					$resultado_h = mysqli_query($conexion,$consulta_h);
 
-						if ($resultado_h) { //harwdare
+						if ($num=mysqli_num_rows($resultado_h)>0) { //harwdare
 									
+								$modificar="UPDATE hardware SET disponibilidad='0' WHERE serial_h='$serialDelete_h'";
+								$res1 = mysqli_query($conexion,$modificar);
 
 
+								$borrar= "DELETE FROM prestamo_hrw WHERE id_serial_h='$serialDelete_h'";
+								$resultado_borr = mysqli_query($conexion,$borrar);
 
-
-
-					                 echo "modifique hrw";
+					           
 									
 
 					               $vandera++; 
-					               echo "vandera= $vandera";
+					         
 							}
 
 
@@ -65,12 +68,15 @@ if ($Array_serialOn_h==null && $Array_serialOn_cpu==null) {
 	}
 	
 
+}
 
 
 
 
 
 
+
+if ($Array_serialDelete_cpu) {
 
 
 foreach ($Array_serialDelete_cpu as $key1 => $serialDelete_cpu) {
@@ -81,20 +87,25 @@ foreach ($Array_serialDelete_cpu as $key1 => $serialDelete_cpu) {
 
 
 
-						$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE id_prestamo='$serialDelete_cpu'";
-						$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
+		$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE cod_cpu='$serialDelete_cpu'";
+		$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
 
 
-					if ($resultado_cpu) { //cpu
+					if ($num=mysqli_num_rows($resultado_cpu)>0) { //cpu
 								
 
+								$modificar2="UPDATE cpu SET disponibilidad='0' WHERE cod_cpu='$serialDelete_cpu'";
+								$res2 = mysqli_query($conexion,$modificar2);
+
+								$borrar= "DELETE FROM prestamo_cpu WHERE id_cpu='$serialDelete_cpu'";
+								$resultado_bor = mysqli_query($conexion,$borrar);
+	
 
 
-
-										echo "modifique cpu";
+						
 
 							            $vandera++;
-										echo "vandera= $vandera";
+				
 
 
 
@@ -106,7 +117,7 @@ foreach ($Array_serialDelete_cpu as $key1 => $serialDelete_cpu) {
 
 
 }
-
+}
 
 
 

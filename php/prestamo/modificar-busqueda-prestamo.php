@@ -70,25 +70,17 @@ $row = mysqli_fetch_array($resultado1);
 
 
 
-<h3>Detalles del prestamo</h3>
+
 
 <div class="row">
 	
 
-	<table class='table table-bordered'>
 
 <?php
 
 $validar_hrw= "SELECT * FROM prestamo_hrw  WHERE id_prestamo='$id'";
 $validarcion_hrw = mysqli_query($conexion,$validar_hrw);
-?>
-						    <thead>
-						        <tr class='tabla-principal'>
-						            <th>nombre</th>
-						            <th>Descripci&oacute;n</th>
-						            <th></th>
-						        </tr>
-						    </thead>
+?>						
 
 						    	<?php
 if (mysqli_num_rows($validarcion_hrw)>0) {
@@ -97,7 +89,16 @@ if (mysqli_num_rows($validarcion_hrw)>0) {
 
 
 						    									<!-- tabla hardware-->
-
+<h3>Detalles del Hardware</h3>
+							<table class='table table-bordered'>
+						    <thead>
+						        <tr class='tabla-principal'>
+						            <th>Serial</th>
+						            <th>nombre</th>
+						            <th>Descripci&oacute;n</th>
+						            <th></th>
+						        </tr>
+						    </thead>
 						    <tbody>
 						    	<?php
 							$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$id'";
@@ -112,6 +113,7 @@ if (mysqli_num_rows($validarcion_hrw)>0) {
 						    	?>
 						    	<input type="hidden" name="serial_hDelete[]" value="<?php echo $row_h['serial_h'];?>">
 						        <tr>
+						        	<td><?php echo $row_h['serial_h'];?></td>
 						        	<td><?php echo $row_h['nombre_h'];?></td>
 						        		<input type="hidden" name="serial_hOn[]" value="<?php echo $row_h['serial_h'];?>">
 
@@ -120,6 +122,7 @@ if (mysqli_num_rows($validarcion_hrw)>0) {
 						        </tr>
 						        <?php }?> 
 						    </tbody>
+						    </table>
 
  <?php }?> 
 
@@ -134,16 +137,28 @@ $validarcion_cpu = mysqli_query($conexion,$validar_cpu);
 
 if (mysqli_num_rows($validarcion_cpu)>0) {
 	?>
+	<h3>Detalles del Cpu</h3>
+	<table class='table table-bordered'>
+					  <thead>
+						        <tr class='tabla-principal'>
+						            <th>Serial</th>
+						            <th>Sistena operativo</th>
+						            <th>procedencia</th>
+						            <th></th>
+						        </tr>
+						    </thead>
+
 
 						    	<tbody>
+
 						    	<?php 
 
 
 
-						    	$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE id_prestamo='$id'";
-								$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
+			$consulta_cpu = "SELECT * FROM cpu INNER JOIN prestamo_cpu ON cpu.cod_cpu = prestamo_cpu.id_cpu WHERE id_prestamo='$id'";
+			$resultado_cpu = mysqli_query($conexion,$consulta_cpu);
 
-						    	$row_cpu = mysqli_fetch_array($resultado_cpu);
+						    	while ($row_cpu = mysqli_fetch_array($resultado_cpu)){ 
 						    	?>
 						    	<input type="hidden" name="serial_cpuDelete[]" value="<?php echo $row_cpu['cod_cpu'];?>">
 						        <tr>
@@ -151,9 +166,10 @@ if (mysqli_num_rows($validarcion_cpu)>0) {
 						       			 <input type="hidden" name="serial_cpuOn[]" value="<?php echo $row_cpu['cod_cpu'];?>">
 
 						            <td><?php echo $row_cpu['SO'];?></td>
+						             <td><?php echo $row_cpu['procedencia'];?></td>
 						            <td><button type="button" class="btn btn-sm btn-danger eliminar-producto" >Eliminar</button></td>
 						        </tr>
-
+						         <?php }?> 
 						    </tbody>
 
 

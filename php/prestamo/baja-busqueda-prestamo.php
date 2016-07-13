@@ -11,12 +11,13 @@ include ("/../../conexion/config.php");
 		$consulta = "SELECT * FROM prestamo_equipo WHERE n_prestamo='$busqueda'";
 		$resultado = mysqli_query($conexion,$consulta);
 
-		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE n_prestamo='$busqueda'";
+		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE n_prestamo='$busqueda' AND estado='0'";
 		$resultado1 = mysqli_query($conexion,$consulta1);
 
 
 printf("<h1>Busqueda Avanzada</h1> </br>");
-if(mysqli_num_rows($resultado)>0) {
+if($numero=mysqli_num_rows($resultado1)>0) {
+
 	
 
 print("<div class='jumbotron'>");
@@ -89,7 +90,7 @@ printf("<h3>Componentes hardware</h3>");
 
 ");
 
-			$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$id'";
+	$consulta_h = "SELECT * FROM hardware INNER JOIN prestamo_hrw ON hardware.serial_h = prestamo_hrw.id_serial_h WHERE id_prestamo='$id'";
 			$resultado_h = mysqli_query($conexion,$consulta_h);
 
 while ($row_h = mysqli_fetch_array($resultado_h)) {
@@ -232,8 +233,90 @@ printf("</div>");
 
 
 
+ ?>
+ 	<form id="formEdHrw" class='form-horizontal formEdHrw' method="POST" accept-charset="utf-8">
 
 
+
+
+<input type="hidden" name="busqueda" value=" <?php  echo  $busqueda?>">
+
+						<div class="col-xs-12 col-sm-12 col-xs-4 col-lg-4">
+							<label for="fecha">Fecha inicial del prestamo</label>
+							<input type="date" name="fecha" id="fecha" class="form-control" required>
+						</div>
+
+	
+ <div class="col-xs-12 col-sm-12 col-xs-12 col-lg-12" style="margin-top: 20px">
+ <input type='submit' id='BtnHrw' name='Btn' value='Baja prestamo' class='btn btn-success'>
+</div>
+
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="js/jquery-2.2.3.min.js"></script>
+
+<script>
+	
+	$(document).on('ready',funcAjaxx);
+
+	function funcAjaxx (){
+
+$(".formEdHrw").on("submit", function(e){
+	
+	//Evitamos que se envíe por defecto
+	e.preventDefault();
+	//Creamos un FormData con los datos del mismo formulario
+	var formData = new FormData(this);
+
+	//Llamamos a la función AJAX de jQuery
+	$.ajax({
+		//Definimos la URL del archivo al cual vamos a enviar los datos
+		url: "php/prestamo/baja-agregar-baja-prestamo.php",
+		//Definimos el tipo de método de envío
+		type: "POST",
+		//Definimos el tipo de datos que vamos a enviar y recibir
+		dataType: "HTML",
+		//Definimos la información que vamos a enviar
+		data: formData,
+		//Deshabilitamos el caché
+		cache: false,
+		//No especificamos el contentType
+		contentType: false,
+		//No permitimos que los datos pasen como un objeto
+		processData: false
+
+
+	}).done(function(data){
+		//Cuando recibamos respuesta, la mostramos
+		
+		mensaje.html(data);
+		mensaje.slideDown(500); });
+}
+
+);
+
+	}
+</script>
+
+
+
+
+
+
+
+
+
+<?php
 
 
 die(

@@ -13,9 +13,13 @@ $fechaactual = getdate();
 <style>
 <!--
 
+table.clase, table.clase th,  table.clase td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
    
 .contenido {border: 1px solid black}
-.tab {border-collapse: collapse;  height: 50px;}
+.tab {border-collapse: collapse;  height: 50px; text-align: center;}
 .color {background-color: #6AA8FC; color: #000000;}
 .tab2{  height: 40px; width:130px;}
 .descripcion { width: 200px;}
@@ -35,7 +39,7 @@ if($numero>0) {
 ?>
 
 
- <page backtop="130px" backbottom="170px" backleft="10mm" backright="10mm"> 
+ <page backtop="170px" backbottom="170px" backleft="10mm" backright="10mm"> 
 
 
 	<page_header>
@@ -73,7 +77,7 @@ if($numero>0) {
 
 			 	<page_footer>
 						 	<div style="text-align:center">
-						 	<h6> Página [[page_cu]] /[[page_nb]]<?php ?><?php ?></h6>
+						 	<h6> Página [[page_cu]]/[[page_nb]]<?php ?><?php ?></h6>
 						 	</div>
 
 			 	</page_footer>
@@ -104,11 +108,6 @@ if($numero>0) {
 
 
 
-
-
-
-
-<div style="padding-top: 30px; text-align:center">
 
 		<table  class="contenido tab">
 				<tr>
@@ -144,84 +143,56 @@ while ($row = mysqli_fetch_array($resultado)) {
 
 	 ?>	
 
+		</table>
 
+
+
+		<table style=" width: 100%; text-align: center; margin-top:50px">
+						<tr>
+								<td colspan="2" style=" width: 100%;">
+														
+														Observaciones:______________________________________________________<br><br>
+														____________________________________________________________________<br><br>
+														____________________________________________________________________<br><br>
+														____________________________________________________________________<br><br>
+
+
+								</td>
+						
+						</tr>
+
+
+						<tr >
+						
+								<td >
+								<br>
+								<br>
+								<br>
+								<br>
+								___________________________<br>
+								 Jefe Área<br>
+								Soporte Técnico<br>
+								</td>
+
+
+
+								<td>
+								<br>
+								<br>
+								<br>
+								<br>
+								___________________________<br>
+								Jefe Del Departamento<br>
+								de TIC<br>
+
+
+								</td>
+						</tr>
 
 		</table>
 
 
-</div>
 
-
-
-
-<div>
-
-
-<div style="padding-top: 10px; margin-left: 80px"> 
-
-			<table>
-
-					<tr>
-
-								<td style="width: 50%">
-											<div style="text-align: center; width: 100%; padding-top:20px">
-											Observaciones:______________________________________________________<br><br>
-											____________________________________________________________________<br><br>
-											____________________________________________________________________<br><br>
-											____________________________________________________________________
-
-											</div>
-
-								</td>
-					</tr>
-
-
-
-			</table>
-
-</div >
-
-
-
-
-
-
-
-<div style="padding-top: 10px; margin-left: 70px">
-	
-
-			<table>
-			<tr>
-				
-					<td>
-							<div style="margin-left: 50px">___________________________</div>
-							 <div style="margin-left: 115px"> Jefe Área</div>
-							 <div style="margin-left: 100px">Soporte Técnico</div>
-
-
-
-					</td>
-
-					<td></td>
-
-					<td>
-						
-
-							<div style="margin-left: 50px">___________________________</div>
-							 <div style="margin-left: 80px">Jefe Del Departamento</div>
-							 <div style="margin-left: 130px">de TIC</div>
-
-
-					</td>
-
-
-			</tr>
-
-
-			 </table>
-</div>
-
-</div>
 </page>
 
 <?php
