@@ -63,7 +63,9 @@ $row = mysqli_fetch_array($resultado);
 
 				
 			<input type="submit" id="BtnCpu" name="enviar_btn" value="Eliminar" class="btn btn-warning">
-
+<br>
+<br>
+<br>
 </form>
 
 <script src="js/jquery-2.2.3.min.js"></script>

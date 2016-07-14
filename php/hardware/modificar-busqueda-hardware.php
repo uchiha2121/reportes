@@ -6,7 +6,7 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' ";
+			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' AND disponibilidad='0' AND estado='0'";
 
 
 			$resultado = mysqli_query($conexion,$consulta);

@@ -11,21 +11,30 @@ include ("/../../conexion/config.php");
 
 if($resultado && ($contador=mysqli_num_rows($resultado))!=0) {
 	$n=1;
-
+	$operatividad;
 	printf("				
 	<table  id='Tabla' class='table table-bordered'>
 				<tr class='tabla-principal'>
 						<td>Nro</td>
 						<td>Serial Hardware</td>
 						<td>Nombre Accesorio</td>
-						<td>Descripcion</td>		
+						<td>Descripcion</td>
+						<td>Estado</td>		
 				</tr>
 
 ");
 
 
 while ($row = mysqli_fetch_array($resultado)) {
-						
+	?>
+										
+<?php if($row['estado'] == '0'){$operatividad='opertativo';} else{$operatividad='no operativo';} ?>
+
+			
+					
+
+<?php 
+									
 					
 					printf("
 						<tr>
@@ -33,10 +42,12 @@ while ($row = mysqli_fetch_array($resultado)) {
 							<td>%s</td>
 							<td>%s</td>
 							<td>%s</td>
-						</tr>
+							<td>%s</td>
+							
+					</tr>
 
 
-						",$n,$row['serial_h'],$row['nombre_h'],$row['especificacion']);
+						",$n,$row['serial_h'],$row['nombre_h'],$row['especificacion'],$operatividad);
 
 
 			

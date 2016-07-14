@@ -63,7 +63,9 @@ $row = mysqli_fetch_array($resultado);
 
 				
 			<input type="submit" id="BtnCpu" name="enviar_btn" value="Editar" class="btn btn-success">
-
+<br>
+<br>
+<br>
 </form>
 
 <script src="js/jquery-2.2.3.min.js"></script>

@@ -3,17 +3,15 @@ require_once '/../../conexion/config.php';
 		
 			$busqueda = $_POST['busqueda'];
 
-		$consulta = "SELECT * FROM prestamo_equipo WHERE n_prestamo='$busqueda'";
-		$resultado = mysqli_query($conexion,$consulta);
 
 
 
-		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE n_prestamo='$busqueda'";
+		$consulta1 = "SELECT * FROM prestamo_equipo INNER JOIN personal ON prestamo_equipo.cedula = personal.cedula INNER JOIN departamentos ON departamentos.cod_depto = personal.id_depto WHERE n_prestamo='$busqueda' AND estado='0'";
 		$resultado1 = mysqli_query($conexion,$consulta1);
 		
 
 
-if(mysqli_num_rows($resultado)>0) {
+if(mysqli_num_rows($resultado1)>0) {
 
 $row = mysqli_fetch_array($resultado1);
 		$id=$busqueda;

@@ -30,7 +30,7 @@
   				<label for="dpto">departamento: </label>
   				<select id="departamento" name="dpto"  class="form-control" required>
   					<option value="" >Seleccionar</option>
-  						<?php include("seleccionar-departamento.php"); ?>
+  						<?php include("/../funciones/seleccionar-departamento.php"); ?>
 
   				</select>
 

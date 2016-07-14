@@ -6,18 +6,19 @@ include ("/../../conexion/config.php");
 			$busqueda = $_POST['busqueda'];
 
 
-			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' WHERE estado='0'";
+			$consulta = "SELECT * FROM hardware WHERE serial_h = '$busqueda' AND disponibilidad='0' AND estado='0'";
 
 
 			$resultado = mysqli_query($conexion,$consulta);
 
-			mysqli_data_seek ($resultado, 0);
+
 
 $row = mysqli_fetch_array($resultado);
 
-
-if($resultado && ($contador=mysqli_num_rows($resultado))>0) {
+if($contador=mysqli_num_rows($resultado)>0) {
 ?>	
+
+
  	<form id="formEdHrw" class='form-horizontal formEdHrw' method="POST" accept-charset="utf-8" >
 
 
